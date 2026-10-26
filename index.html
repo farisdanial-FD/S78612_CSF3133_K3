@@ -10,10 +10,12 @@
         h1 { border-bottom: 2px solid #eaecef; padding-bottom: 12px; margin-top: 0; color: #0366d6; }
         .card { background: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
         .card h3 { margin-top: 0; color: #24292e; }
-        .btn { display: inline-block; padding: 10px 16px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-right: 10px; margin-top: 10px; font-size: 14px; }
+        .btn { display: inline-block; padding: 8px 14px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-right: 10px; margin-top: 8px; font-size: 13px; }
         .btn-live { background: #2ea44f; color: white; }
         .btn-code { background: #0366d6; color: white; }
         .btn:hover { opacity: 0.85; }
+        .exercise-row { margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #e1e4e8; }
+        .exercise-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
         .footer { text-align: center; margin-top: 30px; font-size: 13px; color: #586069; }
     </style>
 </head>
@@ -21,17 +23,30 @@
 
     <div class="container">
         <h1>S78612_CSF3133_K3 Lab Portal</h1>
-        <p>Welcome, Lecturer! Use the buttons below to check the live running web pages or inspect all underlying source files directly on GitHub.</p>
+        <p>Welcome, Lecturer! Choose any live exercise below to test it directly, or inspect the full code repository.</p>
 
         <div class="card">
             <h3>Lab 1 Submissions</h3>
-            <p>Choose whether to test the live interface or browse all files inside the Lab 1 folder:</p>
+            <p>Select a specific exercise to view its live web page:</p>
             
-            <!-- Opens your running web page -->
-            <a href="Lab 1/lab1_ExerB.html" target="_blank" class="btn btn-live">🌐 View Live Lab 1 Website</a>
-            
-            <!-- Opens the exact GitHub folder containing all files (images, html, etc.) -->
-            <a href="https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab%201" target="_blank" class="btn btn-code">📂 View All Lab 1 Files on GitHub</a>
+            <!-- Exercise B (As seen in your screenshot) -->
+            <div class="exercise-row">
+                <strong>Exercise B:</strong> Campus Coding Club Page<br>
+                <a href="Lab 1/lab1_ExerB.html" target="_blank" class="btn btn-live">🌐 View Live Exercise B</a>
+            </div>
+
+            <!-- Add more exercises here as needed, just change the filenames! -->
+            <!-- 
+            <div class="exercise-row" style="margin-top: 12px;">
+                <strong>Exercise A:</strong> Description of Exercise A<br>
+                <a href="Lab 1/lab1_ExerA.html" target="_blank" class="btn btn-live">🌐 View Live Exercise A</a>
+            </div> 
+            -->
+
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #d1d5da;">
+                <!-- Keeps your preferred View All Files button intact -->
+                <a href="https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab%201" target="_blank" class="btn btn-code">📂 View All Lab 1 Files on GitHub</a>
+            </div>
         </div>
 
         <div class="footer">
