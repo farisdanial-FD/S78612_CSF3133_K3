@@ -3,27 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S78612_CSF3133_K3 - Lab Portal</title>
+    <title>S78612_CSF3133_K3 - Lecturer Lab Portal</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.6; }
-        h1 { color: #24292e; border-bottom: 1px solid #eaecef; padding-bottom: 10px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; color: #24292e; line-height: 1.6; background-color: #f0f2f5; }
+        .container { background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        h1 { border-bottom: 2px solid #eaecef; padding-bottom: 12px; margin-top: 0; color: #0366d6; }
         .card { background: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
-        .btn { display: inline-block; background: #2ea44f; color: white; padding: 10px 16px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-right: 10px; margin-top: 10px; }
-        .btn-secondary { background: #0366d6; }
-        .btn:hover { opacity: 0.9; }
+        .card h3 { margin-top: 0; color: #24292e; }
+        .btn { display: inline-block; padding: 10px 16px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-right: 10px; margin-top: 10px; font-size: 14px; }
+        .btn-live { background: #2ea44f; color: white; }
+        .btn-code { background: #0366d6; color: white; }
+        .btn:hover { opacity: 0.85; }
+        .footer { text-align: center; margin-top: 30px; font-size: 13px; color: #586069; }
     </style>
 </head>
 <body>
 
-    <h1>S78612_CSF3133_K3 Lab Portal</h1>
-    <p>Welcome, Lecturer! You can view the live running website or inspect the source files from the links below.</p>
+    <div class="container">
+        <h1>S78612_CSF3133_K3 Lab Portal</h1>
+        <p>Welcome, Lecturer! This portal provides direct access to the live running lab assignments alongside their source code repositories.</p>
 
-    <div class="card">
-        <h3>Lab 1 Submissions</h3>
-        <p>Test the live web page or check the raw code files.</p>
-        <!-- Replace 'lab1_ExerB.html' with the exact filename of your HTML file inside the Lab 1 folder -->
-        <a href="Lab 1/lab1_ExerB.html" target="_blank" class="btn">🌐 View Live Lab 1 Website</a>
-        <a href="https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab%201" target="_blank" class="btn btn-secondary">📂 Inspect Files on GitHub</a>
+        <div class="card">
+            <h3>Lab 1 Submissions</h3>
+            <p>Select an option below to evaluate the lab output or inspect the code files:</p>
+            <!-- Link to your actual HTML file inside Lab 1 -->
+            <a href="Lab 1/lab1_ExerB.html" target="_blank" class="btn btn-live">🌐 View Live Website</a>
+            <!-- Link directly to the GitHub folder for Lab 1 code inspection -->
+            <a href="https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab%201" target="_blank" class="btn btn-code">📂 Inspect Source Files (GitHub)</a>
+        </div>
+
+        <div class="card">
+            <h3>Repository Overview</h3>
+            <a href="https://github.com/farisdanial-FD/S78612_CSF3133_K3" target="_blank" class="btn btn-code">🔗 View Full GitHub Repository</a>
+        </div>
+
+        <div class="footer">
+            Student: Faris Danial | Course: S78612_CSF3133_K3
+        </div>
     </div>
 
 </body>
