@@ -5,8 +5,9 @@
 [![Live Portal Status](https://img.shields.io/badge/GitHub%20Pages-Active-success?style=for-the-badge&logo=github)](https://farisdanial-fd.github.io/S78612_CSF3133_K3/)
 [![University](https://img.shields.io/badge/University-UMT-blue?style=for-the-badge)](https://www.umt.edu.my)
 [![Degree](https://img.shields.io/badge/Program-Software%20Engineering-orange?style=for-the-badge)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-**Repositori rasmi tugasan makmal dan projek pembangunan web bagi kursus S78612_CSF3133_K3.**
+**Repositori rasmi tugasan makmal dan projek pembangunan web bagi kursus S78612_CSF3133_K3 di Universiti Malaysia Terengganu (UMT).**
 
 </div>
 
@@ -15,8 +16,17 @@
 ## 👨‍💻 Mengenai Pemilik Repositori
 * **Nama:** Muhammad Faris Danial Bin Izham
 * **Institusi:** Universiti Malaysia Terengganu (UMT)
-* **Pengajian:** Tahun Kedua Ijazah Sarjana Muda Sains Komputer (Kejuruteraan Perisian Dengan Kepujian)
+* **Pengajian:** Tahun Kedua Ijazah Sarjana Muda Sains Komputer (Kejuruteraan Perisian)
 * **Fokus Kemahiran:** Pembangunan Web, Kejuruteraan Perisian, Reka Bentuk UI/UX, dan Pengaturcaraan Berorientasikan Objektif (OOP).
+
+---
+
+## 🛠️ Teknologi yang Digunakan (Tech Stack)
+Repositori dan portal ini dibangunkan menggunakan teknologi berikut:
+* ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+* ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+* ![Git](https://img.shields.io/badge/git-%23F05032.svg?style=for-the-badge&logo=git&logoColor=white)
+* ![GitHub Pages](https://img.shields.io/badge/github%20pages-%23222222.svg?style=for-the-badge&logo=github&logoColor=white)
 
 ---
 
