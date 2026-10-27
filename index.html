@@ -5,76 +5,241 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S78612_CSF3133_K3 - Lecturer Lab Portal</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; color: #24292e; line-height: 1.6; background-color: #f0f2f5; }
-        .container { background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        h1 { border-bottom: 2px solid #eaecef; padding-bottom: 12px; margin-top: 0; color: #0366d6; }
-        .card { background: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
-        .card h3 { margin-top: 0; color: #24292e; }
-        .btn { display: inline-block; padding: 8px 14px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-right: 10px; margin-top: 8px; font-size: 13px; }
-        .btn-live { background: #2ea44f; color: white; }
-        .btn-code { background: #0366d6; color: white; }
-        .btn:hover { opacity: 0.85; }
-        .exercise-row { margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #e1e4e8; }
-        .exercise-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .footer { text-align: center; margin-top: 30px; font-size: 13px; color: #586069; }
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4f46e5, #3b82f6);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 15px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .grid-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .link-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            padding: 12px 16px;
+            border-radius: 8px;
+            transition: background 0.15s ease;
+        }
+
+        .link-item:hover {
+            background: #f1f5f9;
+        }
+
+        .file-info {
+            font-size: 14px;
+        }
+
+        .file-info strong {
+            display: block;
+            color: var(--text-main);
+        }
+
+        .file-info span {
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 12px;
+            transition: opacity 0.15s;
+            white-space: nowrap;
+        }
+
+        .btn-live {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-code {
+            background: #0284c7;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .footer-action {
+            text-align: right;
+            border-top: 1px dashed var(--border);
+            padding-top: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>S78612_CSF3133_K3 Lab Portal</h1>
-        <p>Welcome, Lecturer! Choose any live web page below to test it directly, or inspect the full code repository.</p>
+        <header>
+            <h1>S78612_CSF3133_K3 Lab Portal</h1>
+            <p>Pusat Sehenti Penilaian Laman Web & Kod Sumber Pelajar</p>
+        </header>
 
         <!-- LAB 1 SECTION -->
         <div class="card">
-            <h3>Lab 1 Submissions</h3>
-            <div class="exercise-row">
-                <strong>Main Lab 1 Page:</strong> lab1.html<br>
-                <a href="Lab 1/lab1.html" target="_blank" class="btn btn-live">🌐 View Live lab1.html</a>
+            <h3>📂 Lab 1 Submissions</h3>
+            <div class="grid-links">
+                <div class="link-item">
+                    <div class="file-info">
+                        <strong>Main Lab 1</strong>
+                        <span>lab1.html</span>
+                    </div>
+                    <a href="Lab 1/lab1.html" target="_blank" class="btn btn-live">🌐 View Live</a>
+                </div>
+                <div class="link-item">
+                    <div class="file-info">
+                        <strong>Exercise A</strong>
+                        <span>lab1_ExerA.html</span>
+                    </div>
+                    <a href="Lab 1/lab1_ExerA.html" target="_blank" class="btn btn-live">🌐 View Live</a>
+                </div>
+                <div class="link-item">
+                    <div class="file-info">
+                        <strong>Exercise B</strong>
+                        <span>lab1_ExerB.html</span>
+                    </div>
+                    <a href="Lab 1/lab1_ExerB.html" target="_blank" class="btn btn-live">🌐 View Live</a>
+                </div>
+                <div class="link-item">
+                    <div class="file-info">
+                        <strong>Contact Page</strong>
+                        <span>contact.html</span>
+                    </div>
+                    <a href="Lab 1/contact.html" target="_blank" class="btn btn-live">🌐 View Live</a>
+                </div>
             </div>
-            <div class="exercise-row">
-                <strong>Exercise A:</strong> lab1_ExerA.html<br>
-                <a href="Lab 1/lab1_ExerA.html" target="_blank" class="btn btn-live">🌐 View Live lab1_ExerA.html</a>
-            </div>
-            <div class="exercise-row">
-                <strong>Exercise B:</strong> lab1_ExerB.html<br>
-                <a href="Lab 1/lab1_ExerB.html" target="_blank" class="btn btn-live">🌐 View Live lab1_ExerB.html</a>
-            </div>
-            <div class="exercise-row">
-                <strong>Contact Page:</strong> contact.html<br>
-                <a href="Lab 1/contact.html" target="_blank" class="btn btn-live">🌐 View Live contact.html</a>
-            </div>
-            <div style="margin-top: 15px; padding-top: 12px; border-top: 1px dashed #d1d5da;">
+            <div class="footer-action">
                 <a href="https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab%201" target="_blank" class="btn btn-code">📂 View All Lab 1 Files on GitHub</a>
             </div>
         </div>
 
         <!-- LAB 2 SECTION -->
         <div class="card">
-            <h3>Lab 2 Submissions</h3>
-            <div class="exercise-row">
-                <strong>Main Lab 2 Page:</strong> lab2.html<br>
-                <a href="Lab 2/lab2.html" target="_blank" class="btn btn-live">🌐 View Live lab2.html</a>
+            <h3>📂 Lab 2 Submissions</h3>
+            <div class="grid-links">
+                <div class="link-item">
+                    <div class="file-info">
+                        <strong>Main Lab 2</strong>
+                        <span>lab2.html</span>
+                    </div>
+                    <a href="Lab 2/lab2.html" target="_blank" class="btn btn-live">🌐 View Live</a>
+                </div>
+                <div class="link-item">
+                    <div class="file-info">
+                        <strong>Registration Form</strong>
+                        <span>form.html</span>
+                    </div>
+                    <a href="Lab 2/form.html" target="_blank" class="btn btn-live">🌐 View Live</a>
+                </div>
+                <div class="link-item">
+                    <div class="file-info">
+                        <strong>Semantic Page</strong>
+                        <span>semantic.html</span>
+                    </div>
+                    <a href="Lab 2/semantic.html" target="_blank" class="btn btn-live">🌐 View Live</a>
+                </div>
+                <div class="link-item">
+                    <div class="file-info">
+                        <strong>Table Page</strong>
+                        <span>table.html</span>
+                    </div>
+                    <a href="Lab 2/table.html" target="_blank" class="btn btn-live">🌐 View Live</a>
+                </div>
             </div>
-            <div class="exercise-row">
-                <strong>Registration Form:</strong> form.html<br>
-                <a href="Lab 2/form.html" target="_blank" class="btn btn-live">🌐 View Live form.html</a>
-            </div>
-            <div class="exercise-row">
-                <strong>Semantic Page:</strong> semantic.html<br>
-                <a href="Lab 2/semantic.html" target="_blank" class="btn btn-live">🌐 View Live semantic.html</a>
-            </div>
-            <div class="exercise-row">
-                <strong>Table Page:</strong> table.html<br>
-                <a href="Lab 2/table.html" target="_blank" class="btn btn-live">🌐 View Live table.html</a>
-            </div>
-            <div style="margin-top: 15px; padding-top: 12px; border-top: 1px dashed #d1d5da;">
+            <div class="footer-action">
                 <a href="https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab%202" target="_blank" class="btn btn-code">📂 View All Lab 2 Files on GitHub</a>
             </div>
         </div>
 
         <div class="footer">
-            Student: Muhammad Faris Danial Bin Izham | Course: S78612_CSF3133_K3
+            Dihasilkan oleh Muhammad Faris Danial | Kursus S78612_CSF3133_K3
         </div>
     </div>
 
