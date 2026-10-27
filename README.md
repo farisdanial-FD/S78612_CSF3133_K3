@@ -15,7 +15,7 @@
 ## 👨‍💻 Mengenai Pemilik Repositori
 * **Nama:** Muhammad Faris Danial Bin Izham
 * **Institusi:** Universiti Malaysia Terengganu (UMT)
-* **Pengajian:** Tahun Kedua Ijazah Sarjana Muda Sains Komputer (Ke Kejuruteraan Perisian)
+* **Pengajian:** Tahun Kedua Ijazah Sarjana Muda Sains Komputer (Kejuruteraan Perisian Dengan Kepujian)
 * **Fokus Kemahiran:** Pembangunan Web, Kejuruteraan Perisian, Reka Bentuk UI/UX, dan Pengaturcaraan Berorientasikan Objektif (OOP).
 
 ---
