@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMT Software Engineering Workshop 2026</title>
+</head>
+<body>
+
+    <!-- Semantic Header Section -->
+    <header>
+        <h1>UMT Software Engineering Workshop 2026</h1>
+        <p>Empowering Next-Generation Tech Innovators</p>
+    </header>
+
+    <!-- Navigation Bar with Internal Links -->
+    <nav>
+        <a href="#about">About the Event</a> | 
+        <a href="#schedule">Event Schedule</a> | 
+        <a href="#register">Registration</a>
+    </nav>
+
+    <!-- Section 1: About the Event -->
+    <section id="about">
+        <h2>About the Event</h2>
+        <!-- Two Article Elements -->
+        <article>
+            <h3>Keynote Speaker: Dr. Ahmad</h3>
+            <p>Dr. Ahmad will share valuable industry insights regarding modern software architecture trends, scalable system design, and agile methodologies.</p>
+        </article>
+        <article>
+            <h3>Hands-on Coding Session</h3>
+            <p>Participants will engage in a practical coding challenge, applying object-oriented programming concepts and modern web development stacks.</p>
+        </article>
+    </section>
+
+    <!-- Section 2: Event Schedule Table -->
+    <section id="schedule">
+        <h2>Event Schedule</h2>
+        <table border="1">
+            <tr>
+                <th>Time</th>
+                <th>Activity</th>
+                <th>Venue</th>
+                <th>Person in Charge</th>
+            </tr>
+            <tr>
+                <td>08:30 AM - 09:00 AM</td>
+                <td>Registration & Breakfast</td>
+                <td rowspan="2">Main Hall, UMT</td>
+                <td>Urus Setia Program</td>
+            </tr>
+            <tr>
+                <td>09:00 AM - 10:30 AM</td>
+                <td>Opening Keynote & Tech Talk</td>
+                <td>Dr. Ahmad</td>
+            </tr>
+            <tr>
+                <td>10:30 AM - 12:30 PM</td>
+                <td>Web Interface Lab Session</td>
+                <td>Computer Lab 1</td>
+                <td>Ts. Dr. Nural</td>
+            </tr>
+            <tr>
+                <td>12:30 PM - 02:00 PM</td>
+                <td colspan="3">Lunch Break & Networking Session</td>
+            </tr>
+            <tr>
+                <td>02:00 PM - 04:00 PM</td>
+                <td>UI/UX Design Masterclass</td>
+                <td>Computer Lab 2</td>
+                <td>Puan Rozniza</td>
+            </tr>
+            <tr>
+                <td>04:00 PM - 05:00 PM</td>
+                <td>Closing Ceremony & Q&A</td>
+                <td>Main Hall, UMT</td>
+                <td>Muhammad Faris Danial</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Section 3: Registration Form -->
+    <section id="register">
+        <h2>Event Registration Form</h2>
+        <form action="register.html" method="post">
+            <!-- Text Inputs with Linked Labels -->
+            <label for="fullname">Full Name:</label><br>
+            <input type="text" id="fullname" name="fullname" value="Muhammad Faris Danial Bin Izham" required><br><br>
+
+            <label for="matric">Matric Number:</label><br>
+            <input type="text" id="matric" name="matric" placeholder="Enter your matric number" required><br><br>
+
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+
+            <!-- Radio Buttons for Year of Study -->
+            <label>Year of Study:</label><br>
+            <input type="radio" id="year1" name="year_study" value="Year 1">
+            <label for="year1">Year 1</label><br>
+            <input type="radio" id="year2" name="year_study" value="Year 2" checked>
+            <label for="year2">Year 2</label><br>
+            <input type="radio" id="year3" name="year_study" value="Year 3">
+            <label for="year3">Year 3</label><br>
+            <input type="radio" id="year4" name="year_study" value="Year 4">
+            <label for="year4">Year 4</label><br><br>
+
+            <!-- Checkboxes for Session Choices -->
+            <label>Sessions to Join (Select at least 3):</label><br>
+            <input type="checkbox" id="session1" name="sessions" value="Keynote">
+            <label for="session1">Opening Keynote</label><br>
+            <input type="checkbox" id="session2" name="sessions" value="WebLab">
+            <label for="session2">Web Interface Lab</label><br>
+            <input type="checkbox" id="session3" name="sessions" value="Masterclass">
+            <label for="session3">UI/UX Design Masterclass</label><br><br>
+
+            <!-- Drop-down List for Programme -->
+            <label for="programme">Programme / Faculty:</label><br>
+            <select id="programme" name="programme">
+                <option value="cs">Bachelor of Computer Science (Software Engineering)</option>
+                <option value="it">Bachelor of Information Technology</option>
+                <option value="ds">Bachelor of Data Science</option>
+                <option value="math">Bachelor of Applied Mathematics</option>
+            </select><br><br>
+
+            <!-- Submit Button -->
+            <input type="submit" value="Register Now">
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Organized by Faculty of Computer Science and Mathematics, UMT</p>
+        <p>&copy; 2026 Muhammad Faris Danial Bin Izham. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
