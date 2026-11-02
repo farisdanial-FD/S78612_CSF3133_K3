@@ -1,261 +1,1068 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S78612_CSF3133_K3 - Lecturer Lab Portal</title>
+    <meta name="theme-color" content="#142a32">
+    <meta name="description" content="Portal portfolio makmal CSF3133 K3: buka hasil kerja HTML dan lihat tangkapan skrin validation mengikut lab.">
+    <title>Portfolio Makmal | S78612 CSF3133 K3</title>
     <style>
         :root {
-            --primary: #4f46e5;
-            --primary-hover: #4338ca;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
+            color-scheme: light;
+            --ink: #1c3034;
+            --muted: #687b7d;
+            --paper: #f4f5f1;
+            --card: #ffffff;
+            --line: #e2e8e3;
+            --deep: #142a32;
+            --deep-soft: #1d3b43;
+            --lime: #d9f99d;
+            --lime-ink: #233321;
+            --violet: #7065d8;
+            --shadow: 0 18px 55px rgba(30, 53, 52, 0.07);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 24px;
         }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
             margin: 0;
-            padding: 40px 20px;
-            line-height: 1.5;
+            min-width: 320px;
+            background:
+                radial-gradient(ellipse at 8% 2%, rgba(217, 249, 157, 0.24), transparent 27rem),
+                var(--paper);
+            color: var(--ink);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 950px;
-            margin: 0 auto;
+        a {
+            color: inherit;
         }
 
-        header {
-            background: linear-gradient(135deg, #4f46e5, #3b82f6);
-            color: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.2);
-            margin-bottom: 30px;
-            text-align: center;
+        a:focus-visible {
+            outline: 3px solid #8175ee;
+            outline-offset: 4px;
         }
 
-        header h1 {
-            margin: 0 0 10px 0;
-            font-size: 26px;
+        .skip-link {
+            position: absolute;
+            z-index: 10;
+            top: 12px;
+            left: 12px;
+            transform: translateY(-160%);
+            border-radius: 10px;
+            background: var(--lime);
+            color: var(--ink);
+            padding: 10px 14px;
             font-weight: 700;
+            text-decoration: none;
         }
 
-        header p {
-            margin: 0;
-            opacity: 0.9;
-            font-size: 15px;
+        .skip-link:focus {
+            transform: translateY(0);
         }
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        .page-shell {
+            width: min(1160px, calc(100% - 48px));
+            margin-inline: auto;
         }
 
-        .card:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        .topbar {
+            min-height: 84px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
         }
 
-        .card h3 {
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 18px;
-            color: var(--text-main);
-            border-bottom: 2px solid var(--bg-color);
-            padding-bottom: 10px;
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            text-decoration: none;
+        }
+
+        .brand-mark {
+            width: 43px;
+            height: 43px;
+            display: grid;
+            place-items: center;
+            border-radius: 15px;
+            background: var(--deep);
+            color: var(--lime);
+            font-size: 14px;
+            font-weight: 850;
+            letter-spacing: -0.06em;
+        }
+
+        .brand-copy {
+            display: grid;
+            line-height: 1.2;
+        }
+
+        .brand-copy strong {
+            font-size: 14px;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-copy span {
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 11px;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+        }
+
+        .top-nav {
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .grid-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .link-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #f8fafc;
-            border: 1px solid var(--border);
-            padding: 12px 16px;
-            border-radius: 8px;
-            transition: background 0.15s ease;
-        }
-
-        .link-item:hover {
-            background: #f1f5f9;
-        }
-
-        .file-info {
-            font-size: 14px;
-        }
-
-        .file-info strong {
-            display: block;
-            color: var(--text-main);
-        }
-
-        .file-info span {
-            color: var(--text-muted);
-            font-size: 12px;
-        }
-
-        .btn {
+        .top-nav a {
+            min-height: 40px;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 6px 12px;
+            justify-content: center;
+            gap: 7px;
+            padding: 0 13px;
+            border-radius: 999px;
+            color: #506265;
+            font-size: 13px;
+            font-weight: 650;
             text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
+            transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+        }
+
+        .top-nav a:hover {
+            transform: translateY(-1px);
+            background: #e8ece6;
+            color: var(--ink);
+        }
+
+        .top-nav .nav-github {
+            margin-left: 5px;
+            border: 1px solid #d9e0da;
+            color: var(--ink);
+        }
+
+        .hero {
+            position: relative;
+            isolation: isolate;
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(285px, 0.8fr);
+            align-items: center;
+            gap: clamp(28px, 5vw, 70px);
+            min-height: 370px;
+            overflow: hidden;
+            padding: clamp(30px, 6vw, 68px);
+            border-radius: 30px;
+            background: linear-gradient(125deg, var(--deep) 0%, #1b3840 60%, #29364d 100%);
+            box-shadow: 0 22px 60px rgba(20, 42, 50, 0.16);
+            color: #f6f8f3;
+        }
+
+        .hero::before,
+        .hero::after {
+            position: absolute;
+            z-index: -1;
+            content: "";
+            pointer-events: none;
+        }
+
+        .hero::before {
+            width: 470px;
+            height: 470px;
+            top: -270px;
+            right: -80px;
+            border: 1px solid rgba(217, 249, 157, 0.16);
+            border-radius: 50%;
+            box-shadow: 0 0 0 48px rgba(217, 249, 157, 0.035), 0 0 0 96px rgba(217, 249, 157, 0.025);
+        }
+
+        .hero::after {
+            width: 330px;
+            height: 330px;
+            right: 28%;
+            bottom: -285px;
+            border-radius: 50%;
+            background: rgba(112, 101, 216, 0.28);
+            filter: blur(3px);
+        }
+
+        .hero-copy,
+        .hero-summary {
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            margin: 0;
+            color: var(--violet);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.13em;
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: #d5e4ce;
+        }
+
+        .eyebrow-dot {
+            width: 8px;
+            height: 8px;
+            flex: 0 0 auto;
+            border-radius: 50%;
+            background: var(--lime);
+            box-shadow: 0 0 0 5px rgba(217, 249, 157, 0.12);
+        }
+
+        .hero h1 {
+            max-width: 650px;
+            margin: 19px 0 15px;
+            font-size: clamp(42px, 6vw, 68px);
+            font-weight: 760;
+            letter-spacing: -0.065em;
+            line-height: 0.99;
+        }
+
+        .hero h1 span {
+            color: var(--lime);
+        }
+
+        .hero-description {
+            max-width: 540px;
+            margin: 0;
+            color: #c3d0d0;
+            font-size: clamp(15px, 1.6vw, 17px);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 11px;
+            margin-top: 27px;
+        }
+
+        .button {
+            min-height: 46px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 11px;
+            padding: 0 17px;
+            border: 1px solid transparent;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 750;
+            text-decoration: none;
+            transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            background: var(--lime);
+            color: var(--lime-ink);
+        }
+
+        .button-primary:hover {
+            background: #e5ffc0;
+        }
+
+        .button-secondary {
+            border-color: rgba(231, 240, 236, 0.2);
+            background: rgba(255, 255, 255, 0.04);
+            color: #f2f5ef;
+        }
+
+        .button-secondary:hover {
+            border-color: rgba(231, 240, 236, 0.4);
+            background: rgba(255, 255, 255, 0.09);
+        }
+
+        .hero-summary {
+            padding: 23px;
+            border: 1px solid rgba(229, 238, 233, 0.16);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.075);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+        }
+
+        .summary-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            color: #e0e9e5;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.13em;
+        }
+
+        .summary-heading span:last-child {
+            color: #a9c49b;
+            font-size: 9px;
+            letter-spacing: 0.1em;
+        }
+
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 23px;
+        }
+
+        .summary-stat {
+            display: grid;
+            align-content: start;
+            gap: 2px;
+            padding-left: 12px;
+            border-left: 1px solid rgba(225, 238, 232, 0.22);
+        }
+
+        .summary-stat:first-child {
+            padding-left: 0;
+            border-left: 0;
+        }
+
+        .summary-stat strong {
+            color: #fff;
+            font-size: clamp(27px, 3.1vw, 36px);
+            font-weight: 760;
+            letter-spacing: -0.07em;
+            line-height: 1.1;
+        }
+
+        .summary-stat span {
+            color: #b8c8c6;
+            font-size: 11px;
+        }
+
+        .summary-rule {
+            height: 1px;
+            margin: 21px 0 16px;
+            background: rgba(225, 238, 232, 0.14);
+        }
+
+        .summary-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 0;
+            color: #d0dcda;
             font-size: 12px;
-            transition: opacity 0.15s;
+        }
+
+        .summary-check {
+            width: 20px;
+            height: 20px;
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(217, 249, 157, 0.16);
+            color: var(--lime);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .portfolio {
+            padding-top: 57px;
+        }
+
+        .section-intro {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .section-intro h2 {
+            margin: 7px 0 0;
+            font-size: clamp(25px, 3.4vw, 34px);
+            letter-spacing: -0.055em;
+            line-height: 1.12;
+        }
+
+        .section-intro > p {
+            max-width: 380px;
+            margin: 0 0 2px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .lab-card {
+            overflow: hidden;
+            margin-bottom: 24px;
+            border: 1px solid rgba(208, 219, 211, 0.9);
+            border-radius: 22px;
+            background: var(--card);
+            box-shadow: var(--shadow);
+        }
+
+        .lab-heading {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 22px 26px;
+            border-bottom: 1px solid var(--line);
+            background: linear-gradient(100deg, #fcfdf9, #f8faf5);
+        }
+
+        .lab-index {
+            width: 47px;
+            height: 47px;
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            border-radius: 15px;
+            background: var(--deep);
+            color: var(--lime);
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+        }
+
+        .lab-title-copy .eyebrow {
+            margin-bottom: 3px;
+            font-size: 9px;
+        }
+
+        .lab-title-copy h3 {
+            margin: 0;
+            font-size: 21px;
+            letter-spacing: -0.04em;
+            line-height: 1.2;
+        }
+
+        .lab-title-copy p:last-child {
+            margin: 4px 0 0;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .lab-count {
+            margin-left: auto;
+            padding: 8px 12px;
+            border: 1px solid #e0e7dc;
+            border-radius: 999px;
+            background: #fff;
+            color: #526363;
+            font-size: 11px;
+            font-weight: 700;
             white-space: nowrap;
         }
 
-        .btn-live {
-            background: #10b981;
-            color: white;
+        .lab-content {
+            display: grid;
+            grid-template-columns: minmax(0, 0.91fr) minmax(0, 1.09fr);
+            align-items: start;
+            gap: 20px;
+            padding: 22px;
         }
 
-        .btn-code {
-            background: #0284c7;
-            color: white;
+        .content-panel {
+            min-width: 0;
+            height: 100%;
+            padding: 18px;
+            border: 1px solid #edf0eb;
+            border-radius: 17px;
+            background: #fcfdfa;
         }
 
-        .btn:hover {
-            opacity: 0.9;
+        .panel-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 13px;
         }
 
-        .footer-action {
-            text-align: right;
-            border-top: 1px dashed var(--border);
-            padding-top: 15px;
+        .panel-heading h4 {
+            margin: 0;
+            font-size: 14px;
+            letter-spacing: -0.02em;
         }
 
-        .footer {
+        .panel-kicker {
+            color: #82918c;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 0.09em;
+            white-space: nowrap;
+        }
+
+        .work-list {
+            display: grid;
+            gap: 7px;
+        }
+
+        .work-link {
+            min-height: 52px;
+            display: grid;
+            grid-template-columns: 34px minmax(0, 1fr) 24px;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 9px;
+            border: 1px solid transparent;
+            border-radius: 11px;
+            background: #f4f7f3;
+            text-decoration: none;
+            transition: border-color 150ms ease, background-color 150ms ease, transform 150ms ease;
+        }
+
+        .work-link:hover {
+            transform: translateX(2px);
+            border-color: #dce7d7;
+            background: #f0f6eb;
+        }
+
+        .file-number {
+            width: 31px;
+            height: 31px;
+            display: grid;
+            place-items: center;
+            border-radius: 9px;
+            background: #e7eee4;
+            color: #46604d;
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .work-copy {
+            min-width: 0;
+            display: grid;
+            line-height: 1.25;
+        }
+
+        .work-copy strong {
+            overflow: hidden;
+            color: var(--ink);
+            font-size: 12px;
+            font-weight: 730;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .work-copy span {
+            margin-top: 3px;
+            overflow: hidden;
+            color: #7a8987;
+            font-size: 10px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .work-arrow {
+            color: #788883;
+            font-size: 15px;
             text-align: center;
-            margin-top: 40px;
-            font-size: 13px;
-            color: var(--text-muted);
+            transition: transform 150ms ease;
+        }
+
+        .work-link:hover .work-arrow {
+            transform: translate(2px, -2px);
+            color: var(--violet);
+        }
+
+        .repo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            margin-top: 15px;
+            color: #596c6b;
+            font-size: 11px;
+            font-weight: 700;
+            text-decoration-color: #b1bdb5;
+            text-underline-offset: 3px;
+        }
+
+        .repo-link:hover {
+            color: var(--violet);
+        }
+
+        .proof-intro {
+            margin: -5px 0 13px;
+            color: #71817d;
+            font-size: 11px;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .proof-card {
+            min-width: 0;
+            overflow: hidden;
+            border: 1px solid #e3e9e2;
+            border-radius: 12px;
+            background: #fff;
+            text-decoration: none;
+            transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+        }
+
+        .proof-card:hover {
+            transform: translateY(-3px);
+            border-color: #c8d9bd;
+            box-shadow: 0 9px 20px rgba(32, 57, 47, 0.09);
+        }
+
+        .proof-image {
+            display: block;
+            overflow: hidden;
+            background: #eef1ed;
+        }
+
+        .proof-image img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 2.35 / 1;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 220ms ease;
+        }
+
+        .proof-card:hover .proof-image img {
+            transform: scale(1.025);
+        }
+
+        .proof-caption {
+            min-height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 7px 9px;
+            color: #475a59;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .proof-caption span:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .proof-caption span:last-child {
+            flex: 0 0 auto;
+            color: var(--violet);
+            font-size: 12px;
+        }
+
+        .proof-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin: 13px 0 0;
+            color: #778582;
+            font-size: 10px;
+        }
+
+        .proof-note span {
+            color: var(--violet);
+            font-weight: 800;
+        }
+
+        .site-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 17px 3px 0;
+            color: #788683;
+            font-size: 11px;
+        }
+
+        .site-footer p {
+            margin: 0;
+        }
+
+        .site-footer a {
+            color: #596b68;
+            font-weight: 700;
+            text-decoration-color: #b1bdb5;
+            text-underline-offset: 3px;
+        }
+
+        @media (max-width: 820px) {
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 28px;
+            }
+
+            .hero-summary {
+                max-width: 520px;
+            }
+
+            .lab-content {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .content-panel {
+                height: auto;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .page-shell {
+                width: min(100% - 28px, 480px);
+            }
+
+            .topbar {
+                min-height: 72px;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 12px;
+                padding: 14px 0 17px;
+            }
+
+            .top-nav {
+                width: 100%;
+                gap: 4px;
+            }
+
+            .top-nav a {
+                min-height: 35px;
+                padding-inline: 10px;
+                font-size: 11px;
+            }
+
+            .top-nav .nav-github {
+                margin-left: auto;
+            }
+
+            .hero {
+                min-height: 0;
+                gap: 25px;
+                padding: 29px 22px;
+                border-radius: 23px;
+            }
+
+            .hero h1 {
+                font-size: clamp(40px, 12vw, 54px);
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-summary {
+                padding: 18px;
+            }
+
+            .summary-stat {
+                padding-left: 8px;
+            }
+
+            .summary-stat span {
+                font-size: 10px;
+            }
+
+            .portfolio {
+                padding-top: 42px;
+            }
+
+            .section-intro {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 9px;
+            }
+
+            .section-intro > p {
+                font-size: 12px;
+            }
+
+            .lab-heading {
+                gap: 12px;
+                padding: 17px 15px;
+            }
+
+            .lab-index {
+                width: 41px;
+                height: 41px;
+                border-radius: 13px;
+            }
+
+            .lab-title-copy h3 {
+                font-size: 19px;
+            }
+
+            .lab-title-copy p:last-child {
+                max-width: 230px;
+                font-size: 10px;
+            }
+
+            .lab-count {
+                padding: 6px 8px;
+                font-size: 9px;
+            }
+
+            .lab-content {
+                gap: 13px;
+                padding: 13px;
+            }
+
+            .content-panel {
+                padding: 13px;
+                border-radius: 14px;
+            }
+
+            .proof-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .proof-image img {
+                aspect-ratio: 2.2 / 1;
+            }
+
+            .site-footer {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <header>
-            <h1>S78612_CSF3133_K3 Lab Portal</h1>
-            <p>Pusat Sehenti Penilaian Laman Web & Kod Sumber Pelajar</p>
+    <a class="skip-link" href="#main-content">Langkau ke kandungan</a>
+    <div class="page-shell">
+        <header class="topbar">
+            <a class="brand" href="#top" aria-label="Portfolio Faris Danial, kembali ke atas">
+                <span class="brand-mark" aria-hidden="true">FD</span>
+                <span class="brand-copy">
+                    <strong>Muhammad Faris Danial</strong>
+                    <span>CSF3133 · K3</span>
+                </span>
+            </a>
+            <nav class="top-nav" aria-label="Navigasi utama">
+                <a href="#lab-1">Lab 1</a>
+                <a href="#lab-2">Lab 2</a>
+                <a class="nav-github" href="https://github.com/farisdanial-FD/S78612_CSF3133_K3" target="_blank" rel="noopener noreferrer">Repositori <span aria-hidden="true">↗</span></a>
+            </nav>
         </header>
 
-        <!-- LAB 1 SECTION -->
-        <div class="card">
-            <h3>📂 Lab 1 Submissions</h3>
-            <div class="grid-links">
-                <div class="link-item">
-                    <div class="file-info">
-                        <strong>Main Lab 1</strong>
-                        <span>lab1.html</span>
+        <main id="main-content">
+            <section class="hero" id="top" aria-labelledby="hero-title">
+                <div class="hero-copy">
+                    <p class="eyebrow hero-eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Portfolio pembangunan web</p>
+                    <h1 id="hero-title">Makmal web,<br><span>tersusun rapi.</span></h1>
+                    <p class="hero-description">Semak tugasan HTML, buka setiap halaman terus, dan lihat bukti validation mengikut Lab 1 dan Lab 2.</p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#lab-1">Teroka portfolio <span aria-hidden="true">↓</span></a>
+                        <a class="button button-secondary" href="https://github.com/farisdanial-FD/S78612_CSF3133_K3" target="_blank" rel="noopener noreferrer">Lihat repositori <span aria-hidden="true">↗</span></a>
                     </div>
-                    <a href="Lab 1/lab1.html" target="_blank" class="btn btn-live">🌐 View Live</a>
                 </div>
-                <div class="link-item">
-                    <div class="file-info">
-                        <strong>Exercise A</strong>
-                        <span>lab1_ExerA.html</span>
-                    </div>
-                    <a href="Lab 1/lab1_ExerA.html" target="_blank" class="btn btn-live">🌐 View Live</a>
-                </div>
-                <div class="link-item">
-                    <div class="file-info">
-                        <strong>Exercise B</strong>
-                        <span>lab1_ExerB.html</span>
-                    </div>
-                    <a href="Lab 1/lab1_ExerB.html" target="_blank" class="btn btn-live">🌐 View Live</a>
-                </div>
-                <div class="link-item">
-                    <div class="file-info">
-                        <strong>Contact Page</strong>
-                        <span>contact.html</span>
-                    </div>
-                    <a href="Lab 1/contact.html" target="_blank" class="btn btn-live">🌐 View Live</a>
-                </div>
-            </div>
-            <div class="footer-action">
-                <a href="https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab%201" target="_blank" class="btn btn-code">📂 View All Lab 1 Files on GitHub</a>
-            </div>
-        </div>
 
-       <!-- LAB 2 SECTION -->
-        <div class="card">
-            <h3>📂 Lab 2 Submissions</h3>
-            <div class="grid-links">
-                <div class="link-item">
-                    <div class="file-info">
-                        <strong>Main Lab 2</strong>
-                        <span>lab2.html</span>
+                <aside class="hero-summary" aria-label="Ringkasan portfolio">
+                    <div class="summary-heading"><span>RINGKASAN PORTFOLIO</span><span>CSF3133 · K3</span></div>
+                    <div class="summary-stats">
+                        <div class="summary-stat"><strong>02</strong><span>Makmal</span></div>
+                        <div class="summary-stat"><strong>11</strong><span>Halaman HTML</span></div>
+                        <div class="summary-stat"><strong>07</strong><span>Screenshot</span></div>
                     </div>
-                    <a href="Lab 2/lab2.html" target="_blank" class="btn btn-live">🌐 View Live</a>
-                </div>
-                <div class="link-item">
-                    <div class="file-info">
-                        <strong>Exercise A</strong>
-                        <span>lab2_ExerA.html</span>
+                    <div class="summary-rule"></div>
+                    <p class="summary-note"><span class="summary-check" aria-hidden="true">✓</span><span>Bukti semakan validator disusun bersama lab yang berkaitan.</span></p>
+                </aside>
+            </section>
+
+            <section class="portfolio" aria-labelledby="portfolio-title">
+                <div class="section-intro">
+                    <div>
+                        <p class="eyebrow">Pilih makmal</p>
+                        <h2 id="portfolio-title">Hasil kerja &amp; bukti semakan</h2>
                     </div>
-                    <a href="Lab 2/lab2_ExerA.html" target="_blank" class="btn btn-live">🌐 View Live</a>
+                    <p>Klik nama tugasan untuk buka laman. Klik gambar validation untuk lihat screenshot penuh.</p>
                 </div>
-                <div class="link-item">
-                    <div class="file-info">
-                        <strong>Exercise B</strong>
-                        <span>lab2_ExerB.html</span>
+
+                <article class="lab-card" id="lab-1" aria-labelledby="lab-1-title">
+                    <header class="lab-heading">
+                        <span class="lab-index" aria-hidden="true">01</span>
+                        <div class="lab-title-copy">
+                            <p class="eyebrow">ASAS HTML</p>
+                            <h3 id="lab-1-title">Lab 1</h3>
+                            <p>Struktur dokumen, halaman peribadi, latihan dan contact.</p>
+                        </div>
+                        <span class="lab-count">05 halaman</span>
+                    </header>
+                    <div class="lab-content">
+                        <section class="content-panel" aria-labelledby="lab-1-title lab-1-work-title">
+                            <div class="panel-heading">
+                                <h4 id="lab-1-work-title">Hasil kerja</h4>
+                                <span class="panel-kicker">05 FAIL HTML</span>
+                            </div>
+                            <div class="work-list">
+                                <a class="work-link" href="Lab%201/index.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">01</span>
+                                    <span class="work-copy"><strong>HTML Basics</strong><span>index.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%201/lab1.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">02</span>
+                                    <span class="work-copy"><strong>Main Lab 1</strong><span>lab1.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%201/lab1_ExerA.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">03</span>
+                                    <span class="work-copy"><strong>Exercise A</strong><span>lab1_ExerA.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%201/lab1_ExerB.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">04</span>
+                                    <span class="work-copy"><strong>Exercise B</strong><span>lab1_ExerB.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%201/contact.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">05</span>
+                                    <span class="work-copy"><strong>Contact Page</strong><span>contact.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                            <a class="repo-link" href="https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab%201" target="_blank" rel="noopener noreferrer">📂 Lihat semua fail Lab 1 di GitHub <span aria-hidden="true">↗</span></a>
+                        </section>
+
+                        <section class="content-panel" aria-labelledby="lab-1-title lab-1-proof-title">
+                            <div class="panel-heading">
+                                <h4 id="lab-1-proof-title">Screenshot validation</h4>
+                                <span class="panel-kicker">05 BUKTI</span>
+                            </div>
+                            <p class="proof-intro">Bukti validation Lab 1 — tekan gambar untuk buka saiz penuh.</p>
+                            <div class="proof-grid">
+                                <a class="proof-card" href="Lab%201/validation_index.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot validation HTML Basics dalam tab baharu">
+                                    <span class="proof-image"><img src="Lab%201/validation_index.png" alt="Screenshot hasil semakan validator untuk HTML Basics, index.html" loading="lazy" decoding="async"></span>
+                                    <span class="proof-caption"><span>HTML Basics · index</span><span aria-hidden="true">↗</span></span>
+                                </a>
+                                <a class="proof-card" href="Lab%201/validation_lab1.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot validation Main Lab 1 dalam tab baharu">
+                                    <span class="proof-image"><img src="Lab%201/validation_lab1.png" alt="Screenshot hasil semakan validator untuk Main Lab 1, lab1.html" loading="lazy" decoding="async"></span>
+                                    <span class="proof-caption"><span>Main Lab 1</span><span aria-hidden="true">↗</span></span>
+                                </a>
+                                <a class="proof-card" href="Lab%201/validation_lab1_ExerA.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot validation Exercise A Lab 1 dalam tab baharu">
+                                    <span class="proof-image"><img src="Lab%201/validation_lab1_ExerA.png" alt="Screenshot hasil semakan validator untuk Exercise A Lab 1" loading="lazy" decoding="async"></span>
+                                    <span class="proof-caption"><span>Exercise A</span><span aria-hidden="true">↗</span></span>
+                                </a>
+                                <a class="proof-card" href="Lab%201/validation_lab1_ExerB.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot validation Exercise B Lab 1 dalam tab baharu">
+                                    <span class="proof-image"><img src="Lab%201/validation_lab1_ExerB.png" alt="Screenshot hasil semakan validator untuk Exercise B Lab 1" loading="lazy" decoding="async"></span>
+                                    <span class="proof-caption"><span>Exercise B</span><span aria-hidden="true">↗</span></span>
+                                </a>
+                                <a class="proof-card" href="Lab%201/validation_contact.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot validation Contact Page Lab 1 dalam tab baharu">
+                                    <span class="proof-image"><img src="Lab%201/validation_contact.png" alt="Screenshot hasil semakan validator untuk Contact Page Lab 1" loading="lazy" decoding="async"></span>
+                                    <span class="proof-caption"><span>Contact Page</span><span aria-hidden="true">↗</span></span>
+                                </a>
+                            </div>
+                        </section>
                     </div>
-                    <a href="Lab 2/lab2_ExerB.html" target="_blank" class="btn btn-live">🌐 View Live</a>
-                </div>
-                <div class="link-item">
-                    <div class="file-info">
-                        <strong>Registration Form</strong>
-                        <span>form.html</span>
+                </article>
+
+                <article class="lab-card" id="lab-2" aria-labelledby="lab-2-title">
+                    <header class="lab-heading">
+                        <span class="lab-index" aria-hidden="true">02</span>
+                        <div class="lab-title-copy">
+                            <p class="eyebrow">BORANG, JADUAL &amp; SEMANTIK</p>
+                            <h3 id="lab-2-title">Lab 2</h3>
+                            <p>Latihan HTML lanjutan dengan borang, jadual dan elemen semantik.</p>
+                        </div>
+                        <span class="lab-count">06 halaman</span>
+                    </header>
+                    <div class="lab-content">
+                        <section class="content-panel" aria-labelledby="lab-2-title lab-2-work-title">
+                            <div class="panel-heading">
+                                <h4 id="lab-2-work-title">Hasil kerja</h4>
+                                <span class="panel-kicker">06 FAIL HTML</span>
+                            </div>
+                            <div class="work-list">
+                                <a class="work-link" href="Lab%202/lab2.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">01</span>
+                                    <span class="work-copy"><strong>Main Lab 2</strong><span>lab2.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%202/lab2_ExerA.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">02</span>
+                                    <span class="work-copy"><strong>Exercise A</strong><span>lab2_ExerA.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%202/lab2_ExerB.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">03</span>
+                                    <span class="work-copy"><strong>Exercise B</strong><span>lab2_ExerB.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%202/form.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">04</span>
+                                    <span class="work-copy"><strong>Registration Form</strong><span>form.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%202/semantic.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">05</span>
+                                    <span class="work-copy"><strong>Semantic Page</strong><span>semantic.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%202/table.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">06</span>
+                                    <span class="work-copy"><strong>Table Page</strong><span>table.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                            <a class="repo-link" href="https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab%202" target="_blank" rel="noopener noreferrer">📂 Lihat semua fail Lab 2 di GitHub <span aria-hidden="true">↗</span></a>
+                        </section>
+
+                        <section class="content-panel" aria-labelledby="lab-2-title lab-2-proof-title">
+                            <div class="panel-heading">
+                                <h4 id="lab-2-proof-title">Screenshot validation</h4>
+                                <span class="panel-kicker">02 BUKTI</span>
+                            </div>
+                            <p class="proof-intro">Bukti yang tersedia dalam folder Lab 2 ialah untuk Exercise A dan B.</p>
+                            <div class="proof-grid">
+                                <a class="proof-card" href="Lab%202/validation_lab2_ExerA.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot validation Exercise A Lab 2 dalam tab baharu">
+                                    <span class="proof-image"><img src="Lab%202/validation_lab2_ExerA.png" alt="Screenshot hasil semakan validator untuk Exercise A Lab 2" loading="lazy" decoding="async"></span>
+                                    <span class="proof-caption"><span>Exercise A</span><span aria-hidden="true">↗</span></span>
+                                </a>
+                                <a class="proof-card" href="Lab%202/validation_lab2_ExerB.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot validation Exercise B Lab 2 dalam tab baharu">
+                                    <span class="proof-image"><img src="Lab%202/validation_lab2_ExerB.png" alt="Screenshot hasil semakan validator untuk Exercise B Lab 2" loading="lazy" decoding="async"></span>
+                                    <span class="proof-caption"><span>Exercise B</span><span aria-hidden="true">↗</span></span>
+                                </a>
+                            </div>
+                            <p class="proof-note"><span aria-hidden="true">i</span> Klik mana-mana screenshot untuk tengok imej asal dengan lebih jelas.</p>
+                        </section>
                     </div>
-                    <a href="Lab 2/form.html" target="_blank" class="btn btn-live">🌐 View Live</a>
-                </div>
-                <div class="link-item">
-                    <div class="file-info">
-                        <strong>Semantic Page</strong>
-                        <span>semantic.html</span>
-                    </div>
-                    <a href="Lab 2/semantic.html" target="_blank" class="btn btn-live">🌐 View Live</a>
-                </div>
-                <div class="link-item">
-                    <div class="file-info">
-                        <strong>Table Page</strong>
-                        <span>table.html</span>
-                    </div>
-                    <a href="Lab 2/table.html" target="_blank" class="btn btn-live">🌐 View Live</a>
-                </div>
-            </div>
-            <div class="footer-action">
-                <a href="https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab%202" target="_blank" class="btn btn-code">📂 View All Lab 2 Files on GitHub</a>
-            </div>
-        </div>
-        
-        <div class="footer">
-            Dihasilkan oleh Muhammad Faris Danial | Kursus S78612_CSF3133_K3
-        </div>
+                </article>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>Dihasilkan oleh Muhammad Faris Danial · S78612_CSF3133_K3</p>
+            <p>Portfolio tugasan makmal <span aria-hidden="true">✳</span> 2026</p>
+        </footer>
     </div>
-
 </body>
 </html>
