@@ -481,6 +481,31 @@
             padding: 22px;
         }
 
+        .lab-three .lab-content {
+            grid-template-columns: minmax(0, 1.22fr) minmax(0, 0.78fr);
+        }
+
+        .lab-three .work-list {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .topic-list {
+            display: grid;
+            gap: 7px;
+        }
+
+        .topic-item {
+            min-height: 52px;
+            display: grid;
+            grid-template-columns: 34px minmax(0, 1fr);
+            align-items: center;
+            gap: 10px;
+            padding: 7px 9px;
+            border: 1px solid #edf0eb;
+            border-radius: 11px;
+            background: #f4f7f3;
+        }
+
         .content-panel {
             min-width: 0;
             height: 100%;
@@ -721,6 +746,10 @@
                 grid-template-columns: minmax(0, 1fr);
             }
 
+            .lab-three .lab-content {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
             .content-panel {
                 height: auto;
             }
@@ -825,6 +854,10 @@
                 padding: 13px;
             }
 
+            .lab-three .work-list {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
             .content-panel {
                 padding: 13px;
                 border-radius: 14px;
@@ -870,6 +903,7 @@
             <nav class="top-nav" aria-label="Navigasi utama">
                 <a href="#lab-1">Lab 1</a>
                 <a href="#lab-2">Lab 2</a>
+                <a href="#lab-3">Lab 3</a>
                 <a class="nav-github" href="https://github.com/farisdanial-FD/S78612_CSF3133_K3" target="_blank" rel="noopener noreferrer">Repositori <span aria-hidden="true">↗</span></a>
             </nav>
         </header>
@@ -879,7 +913,7 @@
                 <div class="hero-copy">
                     <p class="eyebrow hero-eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Portfolio pembangunan web</p>
                     <h1 id="hero-title">Makmal web,<br><span>tersusun rapi.</span></h1>
-                    <p class="hero-description">Semak tugasan HTML, buka setiap halaman terus, dan lihat bukti validation mengikut Lab 1 dan Lab 2.</p>
+                    <p class="hero-description">Semak tugasan HTML Lab 1 hingga Lab 3, buka setiap halaman terus, dan lihat bukti validation yang tersedia.</p>
                     <div class="hero-actions">
                         <a class="button button-primary" href="#lab-1">Teroka portfolio <span aria-hidden="true">↓</span></a>
                         <a class="button button-secondary" href="https://github.com/farisdanial-FD/S78612_CSF3133_K3" target="_blank" rel="noopener noreferrer">Lihat repositori <span aria-hidden="true">↗</span></a>
@@ -889,12 +923,12 @@
                 <aside class="hero-summary" aria-label="Ringkasan portfolio">
                     <div class="summary-heading"><span>RINGKASAN PORTFOLIO</span><span>CSF3133 · K3</span></div>
                     <div class="summary-stats">
-                        <div class="summary-stat"><strong>02</strong><span>Makmal</span></div>
-                        <div class="summary-stat"><strong>11</strong><span>Halaman HTML</span></div>
+                        <div class="summary-stat"><strong>03</strong><span>Makmal</span></div>
+                        <div class="summary-stat"><strong>19</strong><span>Halaman HTML</span></div>
                         <div class="summary-stat"><strong>07</strong><span>Screenshot</span></div>
                     </div>
                     <div class="summary-rule"></div>
-                    <p class="summary-note"><span class="summary-check" aria-hidden="true">✓</span><span>Bukti semakan validator disusun bersama lab yang berkaitan.</span></p>
+                    <p class="summary-note"><span class="summary-check" aria-hidden="true">✓</span><span>Screenshot validation yang tersedia dipaparkan bersama lab berkaitan.</span></p>
                 </aside>
             </section>
 
@@ -1053,6 +1087,92 @@
                                 </a>
                             </div>
                             <p class="proof-note"><span aria-hidden="true">i</span> Klik mana-mana screenshot untuk tengok imej asal dengan lebih jelas.</p>
+                        </section>
+                    </div>
+                </article>
+
+                <article class="lab-card lab-three" id="lab-3" aria-labelledby="lab-3-title">
+                    <header class="lab-heading">
+                        <span class="lab-index" aria-hidden="true">03</span>
+                        <div class="lab-title-copy">
+                            <p class="eyebrow">HTML5 &amp; INTERAKTIVITI</p>
+                            <h3 id="lab-3-title">Lab 3</h3>
+                            <p>Latihan elemen HTML5, jenis input, atribut dan output.</p>
+                        </div>
+                        <span class="lab-count">08 halaman</span>
+                    </header>
+                    <div class="lab-content">
+                        <section class="content-panel" aria-labelledby="lab-3-title lab-3-work-title">
+                            <div class="panel-heading">
+                                <h4 id="lab-3-work-title">Hasil kerja</h4>
+                                <span class="panel-kicker">08 FAIL HTML</span>
+                            </div>
+                            <div class="work-list">
+                                <a class="work-link" href="Lab%203/lab3.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">01</span>
+                                    <span class="work-copy"><strong>Main Lab 3</strong><span>lab3.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%203/intro5.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">02</span>
+                                    <span class="work-copy"><strong>HTML5 Introduction</strong><span>intro5.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%203/block.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">03</span>
+                                    <span class="work-copy"><strong>Block &amp; Inline Elements</strong><span>block.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%203/div.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">04</span>
+                                    <span class="work-copy"><strong>Div Layout</strong><span>div.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%203/entity.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">05</span>
+                                    <span class="work-copy"><strong>HTML Entities</strong><span>entity.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%203/input5.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">06</span>
+                                    <span class="work-copy"><strong>HTML5 Input Types</strong><span>input5.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%203/inattribute5.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">07</span>
+                                    <span class="work-copy"><strong>Input Attributes</strong><span>inattribute5.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab%203/output5.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">08</span>
+                                    <span class="work-copy"><strong>Output Element</strong><span>output5.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                            <a class="repo-link" href="https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab%203" target="_blank" rel="noopener noreferrer">📂 Lihat semua fail Lab 3 di GitHub <span aria-hidden="true">↗</span></a>
+                        </section>
+
+                        <section class="content-panel" aria-labelledby="lab-3-title lab-3-topic-title">
+                            <div class="panel-heading">
+                                <h4 id="lab-3-topic-title">Fokus latihan</h4>
+                                <span class="panel-kicker">03 TOPIK</span>
+                            </div>
+                            <p class="proof-intro">Kandungan utama yang diterokai dalam Lab 3.</p>
+                            <div class="topic-list">
+                                <div class="topic-item">
+                                    <span class="file-number" aria-hidden="true">01</span>
+                                    <span class="work-copy"><strong>Elemen HTML</strong><span>Block, inline, div dan entiti</span></span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="file-number" aria-hidden="true">02</span>
+                                    <span class="work-copy"><strong>Input HTML5</strong><span>Jenis input dan atribut borang</span></span>
+                                </div>
+                                <div class="topic-item">
+                                    <span class="file-number" aria-hidden="true">03</span>
+                                    <span class="work-copy"><strong>Interaksi &amp; output</strong><span>Kalkulator, range slider dan output</span></span>
+                                </div>
+                            </div>
+                            <p class="proof-note"><span aria-hidden="true">i</span> Folder Lab 3 belum mengandungi screenshot validation.</p>
                         </section>
                     </div>
                 </article>
