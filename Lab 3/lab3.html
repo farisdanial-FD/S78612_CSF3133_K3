@@ -60,9 +60,9 @@
             <label for="cdate">Preferred Contact Date:</label>
             <input type="date" id="cdate" name="contactdate">
 
-            <!-- Range slider for satisfaction level -->
-            <label for="satisfaction">Satisfaction Level (0 to 10):</label>
-            <input type="range" id="satisfaction" name="satisfaction" min="0" max="10" value="5">
+            <!-- Range slider untuk tahap kepuasan dengan paparan nombor dinamik -->
+            <label for="satisfaction">Satisfaction Level (0 to 10): <output id="satisVal">5</output></label>
+            <input type="range" id="satisfaction" name="satisfaction" min="0" max="10" value="5" oninput="satisVal.value = satisfaction.value">
 
             <br><br>
             <input type="submit" value="Submit Form">
