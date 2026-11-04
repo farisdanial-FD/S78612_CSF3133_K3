@@ -6,7 +6,8 @@
 </head>
 <body>
     <form oninput="z.value = parseInt(x.value) + parseInt(y.value)">
-        <input id="x" type="range" min="0" max="10" step="1" value="0"> 0 <br> +
+        <input id="x" type="range" min="0" max="10" step="1" value="0"
+               oninput="xval.value = x.value"><output id="xval" name="xval" for="x">0</output> <br> +
         <input id="y" type="number" value="10">
         <br> = 
         <output name="z" for="x y">10</output>

@@ -144,8 +144,17 @@
         <input type="number" id="child" name="child" min="0" step="1" value="0"><br>
 
         <!-- Error 11 corrected: min="1" max="5" -->
-        <label for="rating">Rate our service:</label>
-        <input type="range" id="rating" name="rating" min="1" max="5" step="1" value="3"><br>
+        <!--
+            ADDED: a slider never prints its own value on the page, so the
+            live number is shown in an <output> that oninput keeps in sync
+            with the thumb position (updates WHILE dragging, not on release).
+            <output> sits AFTER the input, not inside the <label>, because an
+            <output> inside a <label for="..."> is a W3C validation error.
+        -->
+        <label for="rating">Rate our service (1 &ndash; 5):</label>
+        <input type="range" id="rating" name="rating" min="1" max="5" step="1" value="3"
+               oninput="ratingValue.value = rating.value">
+        <output id="ratingValue" name="ratingValue" for="rating">3</output><br>
 
         <!-- Error 12 corrected: for="adult child" -->
         Total tickets: <output id="total" name="total" for="adult child">0</output><br>
@@ -204,7 +213,7 @@
     <p>e-Ticket&reg; &ndash; Campus Cinema &lt; RM10 every Tuesday &amp; all day on Wednesday too.</p>
 </div>
 
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a551c9143ca74753',t:'MTc5Mzc3NjA4NQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a551c9143ca74753',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
 
 <!-- ==================================================================

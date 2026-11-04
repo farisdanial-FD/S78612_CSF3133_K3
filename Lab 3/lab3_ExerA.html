@@ -123,9 +123,12 @@
             <p>
                 <label for="icing">Icing colour:</label>
                 <input type="color" id="icing" name="icing" value="#ffc0cb">
+                <!-- ADDED: live read-out of the slider value -->
                 <label for="sweetness">Sweetness level (1 &ndash; 5):</label>
                 <input type="range" id="sweetness" name="sweetness"
-                       min="1" max="5" step="1" value="3">
+                       min="1" max="5" step="1" value="3"
+                       oninput="sweetnessValue.value = sweetness.value">
+                <output id="sweetnessValue" name="sweetnessValue" for="sweetness">3</output>
             </p>
 
             <!-- Quantity + automatic total using <output> -->
@@ -208,7 +211,7 @@
     </p>
 </div>
 
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a551c9ab9b304753',t:'MTc5Mzc3NjEwOQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a551c9ab9b304753',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
 
 <!-- ==================================================================
