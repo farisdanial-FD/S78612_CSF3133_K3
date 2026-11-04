@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ticket Booking</title>
+</head>
+<body>
+
+<!-- ==================================================================
+     ERROR LOG - Problem B, Part 1
+     Line numbers refer to the ORIGINAL given code, not to this file.
+     ==================================================================
+
+     Error 1  (Line 1) : Incomplete doctype "<!DOCTYPE>". It must be
+                         "<!DOCTYPE html>" so the browser uses HTML5
+                         standards mode instead of quirks mode.
+
+     Error 2  (Line 9) : Crossed / wrongly ordered tags in
+                         "<h1>e-Ticket <span>Your Campus Cinema</h1></span>".
+                         The <span> must be closed BEFORE the </h1>:
+                         "<h1>e-Ticket <span>Your Campus Cinema</span></h1>".
+                         (An inline element nested in the block <h1> is
+                         correct - only the nesting order was wrong.)
+
+     Error 3  (Line 11 + 36): "<span id="content">" (inline element) is
+                         used to wrap <h2>, <p> and <form> (block
+                         elements). A <span> cannot contain block
+                         content, so it was changed to
+                         "<div id="content"> ... </div>".
+
+     Error 4  (Line 13) : The raw "<" character in "tickets < RM10"
+                         starts a fake tag. It must be escaped as
+                         "&lt;".
+
+     Error 5  (Line 13) : "&amp staff" is missing the semicolon, so the
+                         ampersand is not properly escaped. Correct:
+                         "&amp; staff".
+
+     Error 6  (Line 14) : "total.value = adult.value + child.value"
+                         treats both .value properties as STRINGS, so
+                         2 + 3 becomes the text "23" instead of the
+                         number 5. Fixed with Number() (or
+                         .valueAsNumber) around each value.
+
+     Error 7  (Line 18) : Spelling mistake in the input type,
+                         type="emial". An unknown type silently falls
+                         back to type="text", which is why the e-mail
+                         field accepted anything. Correct:
+                         type="email".
+
+     Error 8  (Line 18) : The e-mail input is missing "required", so an
+                         empty e-mail is also accepted. Added.
+
+     Error 9  (Lines 22-23): The input points to list="movies" but the
+                         <datalist> has id="movielist". Ids must match,
+                         otherwise no suggestions appear. Both set to
+                         id="movies" / list="movies" (4 movies added).
+
+     Error 10 (Lines 28-30): The two number inputs have no min="0"
+                         (or max/step), so negative or decimal ticket
+                         counts can be typed. Added min="0" step="1".
+
+     Error 11 (Line 32) : The slider has min="5" max="1" - the minimum
+                         is larger than the maximum, which is why it
+                         "behaves strangely". Correct: min="1" max="5"
+                         step="1".
+
+     Error 12 (Line 33) : "<output ... for="adult kid">" references an
+                         id "kid" that does not exist; the second input
+                         is id="child". Correct: for="adult child".
+                         (The output also had no starting text - now 0.)
+
+     Error 13 (Line 38) : "&Copy;" is a wrong-case entity name. Entity
+                         names are case-sensitive in HTML, so the
+                         copyright sign did not display. Correct:
+                         "&copy;".
+
+     Error 14 (Lines 41-42): A stray leftover "54 </body> 55 </html>"
+                         text sits after the real </html>, giving a
+                         duplicated closing </body></html> pair. Removed.
+     ================================================================== -->
+
+<!-- ============================================================
+     SECTION 1: HEADER (block <div>) - Error 2 corrected here
+     ============================================================ -->
+<div id="header">
+    <h1>e-Ticket <span>Your Campus Cinema</span></h1>
+</div>
+
+<!-- ============================================================
+     SECTION 2: CONTENT (block <div>) - Error 3 corrected here
+     ============================================================ -->
+<div id="content">
+    <h2>Book Your Ticket</h2>
+
+    <!-- Error 4 and Error 5 corrected: &lt; and &amp; -->
+    <p>Promotion: tickets &lt; RM10 for students &amp; staff!</p>
+
+    <!--
+        The oninput handler now calculates TWO results (Part 2, item 7):
+        - total tickets  = adult + child            (2 + 3 = 5)
+        - total price    = adult x 12 + child x 8   (24 + 24 = RM 48.00)
+        Number() forces numeric addition instead of string concatenation
+        (Error 6), and toFixed(2) keeps the price to two decimals.
+    -->
+    <form action="booking.php" method="post"
+          oninput="total.value = Number(adult.value) + Number(child.value);
+                   price.value = 'RM ' + (Number(adult.value) * 12 + Number(child.value) * 8).toFixed(2)">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required autofocus><br>
+
+        <!-- Errors 7 and 8 corrected: type="email" + required -->
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="name@student.umt.edu.my" required><br>
+
+        <!-- Part 2, item 6: phone number with placeholder + required -->
+        <label for="phone">Phone number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="0123456789" required><br>
+
+        <label for="date">Show date:</label>
+        <input type="date" id="date" name="date"><br>
+
+        <!-- Part 2, item 6: show time -->
+        <label for="showtime">Show time:</label>
+        <input type="time" id="showtime" name="showtime"><br>
+
+        <!-- Error 9 corrected: list="movies" now matches the datalist id -->
+        <label for="movie">Movie:</label>
+        <input type="text" id="movie" name="movie" list="movies" placeholder="Choose a movie"><br>
+        <datalist id="movies">
+            <option value="Space Rangers">
+            <option value="Kampung Comedy">
+            <option value="Hujan Melaka">
+            <option value="The Last Kopitiam">
+        </datalist>
+
+        <!-- Error 10 corrected: min="0" and a sensible step -->
+        <label for="adult">Adult tickets:</label>
+        <input type="number" id="adult" name="adult" min="0" step="1" value="0"><br>
+
+        <label for="child">Child tickets:</label>
+        <input type="number" id="child" name="child" min="0" step="1" value="0"><br>
+
+        <!-- Error 11 corrected: min="1" max="5" -->
+        <label for="rating">Rate our service:</label>
+        <input type="range" id="rating" name="rating" min="1" max="5" step="1" value="3"><br>
+
+        <!-- Error 12 corrected: for="adult child" -->
+        Total tickets: <output id="total" name="total" for="adult child">0</output><br>
+
+        <!-- Part 2, item 7: second output for the total price -->
+        Total price: <output id="price" name="price" for="adult child">RM 0.00</output>
+
+        <p><input type="submit" value="Book Now"></p>
+    </form>
+</div>
+
+<!-- ============================================================
+     SECTION 3: SIDEBAR (Part 2, item 5) - block <div id="sidebar">
+     Each list item uses inline elements: <strong> title,
+     <span> age rating and an <a> trailer link.
+     ============================================================ -->
+<div id="sidebar">
+    <h2>Now Showing</h2>
+    <ul>
+        <li>
+            <strong>Space Rangers</strong>
+            <span>(PG13)</span> &ndash;
+            <a href="trailer_space_rangers.html">Watch trailer</a>
+        </li>
+        <li>
+            <strong>Kampung Comedy</strong>
+            <span>(U)</span> &ndash;
+            <a href="trailer_kampung_comedy.html">Watch trailer</a>
+        </li>
+        <li>
+            <strong>Hujan Melaka</strong>
+            <span>(PG12)</span> &ndash;
+            <a href="trailer_hujan_melaka.html">Watch trailer</a>
+        </li>
+        <li>
+            <strong>The Last Kopitiam</strong>
+            <span>(18)</span> &ndash;
+            <a href="trailer_last_kopitiam.html">Watch trailer</a>
+        </li>
+    </ul>
+    <p>
+        <em>Student rate:</em> RM&nbsp;12 (adult) /
+        RM&nbsp;8 (child) &mdash; valid with a student card.
+    </p>
+</div>
+
+<!-- ============================================================
+     SECTION 4: FOOTER (block <div>) - Error 13 corrected
+     Part 2, item 8: &reg;, &lt; and &amp; entities.
+     ============================================================ -->
+<div id="footer">
+    <!-- Corrected copyright entity: &copy; (lower case) -->
+    <p>&copy; 2026 CineKampus. All rights reserved.</p>
+
+    <!-- Item 8: e-Ticket&reg; &ndash; Campus Cinema &lt; RM10 every Tuesday -->
+    <p>e-Ticket&reg; &ndash; Campus Cinema &lt; RM10 every Tuesday &amp; all day on Wednesday too.</p>
+</div>
+
+</body>
+</html>
+
+<!-- ==================================================================
+     TESTING NOTES (Problem B)
+     1. Movie field: typing "Sp" now shows the datalist suggestions
+        (Space Rangers) because list="movies" matches id="movies".
+     2. E-mail field: typing "myemail" and clicking "Book Now" is
+        blocked with "Please include an '@' in the e-mail address."
+     3. 2 adult + 3 child tickets -> Total tickets: 5 and
+        Total price: RM 48.00 (2 x 12 + 3 x 8), updated live.
+     4. The slider now runs 1 to 5 and the copyright sign displays.
+     5. W3C Validator (Validate by File Upload): "No errors or warnings
+        to show." - screenshot attached to the submission.
+     ================================================================== -->

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CampusBake&reg; &ndash; Online Pre-Order</title>
+</head>
+<body>
+
+<!-- ============================================================
+     SECTION 1: HEADER  (block-level <div id="header">)
+     Contains an <h1> with an inline <span> slogan inside it.
+     ============================================================ -->
+<div id="header">
+    <h1>CampusBake&reg; <span>Serving warm happiness, one batch at a time</span></h1>
+</div>
+
+<!-- ============================================================
+     SECTION 2: NAVIGATION (block-level <div id="nav">)
+     Inline <a> links separated by the " | " character.
+     ============================================================ -->
+<div id="nav">
+    <a href="#content">Order Form</a> |
+    <a href="#price-list">Price List</a> |
+    <a href="#pickup">Pick-Up Info</a> |
+    <a href="#footer">Contact Us</a>
+</div>
+
+<!-- ============================================================
+     SECTION 3: CONTENT (block-level <div id="content">)
+     Holds block elements (<h2>, <p>, <ul>, <div>) and an
+     introduction paragraph containing inline elements.
+     ============================================================ -->
+<div id="content">
+
+    <!-- h2 is a block element -->
+    <h2>Welcome to CampusBake&reg;</h2>
+
+    <!-- Introduction paragraph: contains 4 inline elements
+         (<strong>, <em>, <span>, <a>) plus 1 entity. -->
+    <p>
+        We are a <strong>student-run bakery</strong> located at the
+        <em>Faculty of Computer Science and Mathematics</em> cafeteria.
+        Everything is baked fresh every morning &mdash; our cupcakes are
+        <span>RM&nbsp;3.00&nbsp;each</span> and our cake slices are
+        <span>RM&nbsp;5.00&nbsp;each</span>. Pre-orders must be placed at
+        least <strong>24 hours</strong> before pick-up, so please read the
+        <a href="#pickup">pick-up rules</a> before you order.
+    </p>
+
+    <!-- Unordered list is a block element -->
+    <h2>Why pre-order with us?</h2>
+    <ul>
+        <li>No queue &mdash; your box is ready with your name on it.</li>
+        <li>Free delivery to any faculty office for orders above 20 pieces.</li>
+        <li>Halal ingredients, baked in a certified campus kitchen.</li>
+    </ul>
+
+    <!-- ========================================================
+         SECTION 3a: ORDER FORM inside a block <div>
+         Uses HTML5 input types: text, tel, email, date, time,
+         color, range, number, plus <datalist> and <output>.
+         ======================================================== -->
+    <div id="order-form">
+        <h2>Place Your Pre-Order</h2>
+
+        <!--
+            oninput on the <form> fires whenever any form control
+            changes. Inside the handler, "cupcakes", "slices" and
+            "total" are reachable through the form's named properties.
+            Number() converts the text value to a real number so the
+            two prices are ADDED, not concatenated.
+            Cupcake = RM 3.00, Cake slice = RM 5.00
+        -->
+        <form action="order.php" method="post"
+              oninput="total.value = 'RM ' + (Number(cupcakes.value) * 3 + Number(slices.value) * 5).toFixed(2)">
+
+            <!-- Customer name: text + placeholder + required + autofocus -->
+            <p>
+                <label for="custname">Customer name:</label>
+                <input type="text" id="custname" name="custname"
+                       placeholder="e.g. Nur Aisyah binti Ahmad"
+                       required autofocus>
+            </p>
+
+            <!-- Phone number: type="tel", required -->
+            <p>
+                <label for="phone">Phone number:</label>
+                <input type="tel" id="phone" name="phone"
+                       placeholder="0123456789" required>
+            </p>
+
+            <!-- E-mail: type="email", required (browser validates the format) -->
+            <p>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email"
+                       placeholder="name@student.umt.edu.my" required>
+            </p>
+
+            <!-- Pick-up date and pick-up time -->
+            <p>
+                <label for="pickupdate">Pick-up date:</label>
+                <input type="date" id="pickupdate" name="pickupdate" required>
+                <label for="pickuptime">Pick-up time:</label>
+                <input type="time" id="pickuptime" name="pickuptime" required>
+            </p>
+
+            <!-- Flavour: text input linked to a <datalist> with 4 flavours -->
+            <p>
+                <label for="flavour">Flavour:</label>
+                <input type="text" id="flavour" name="flavour"
+                       list="flavourlist" placeholder="Start typing&hellip;">
+                <datalist id="flavourlist">
+                    <option value="Vanilla Bean">
+                    <option value="Belgian Chocolate">
+                    <option value="Strawberry Cream">
+                    <option value="Pandan Coconut">
+                    <option value="Salted Caramel">
+                </datalist>
+            </p>
+
+            <!-- Icing colour and sweetness slider -->
+            <p>
+                <label for="icing">Icing colour:</label>
+                <input type="color" id="icing" name="icing" value="#ffc0cb">
+                <label for="sweetness">Sweetness level (1 &ndash; 5):</label>
+                <input type="range" id="sweetness" name="sweetness"
+                       min="1" max="5" step="1" value="3">
+            </p>
+
+            <!-- Quantity + automatic total using <output> -->
+            <p>
+                <label for="cupcakes">Cupcakes (RM&nbsp;3.00 each):</label>
+                <input type="number" id="cupcakes" name="cupcakes"
+                       min="0" value="0">
+            </p>
+            <p>
+                <label for="slices">Cake slices (RM&nbsp;5.00 each):</label>
+                <input type="number" id="slices" name="slices"
+                       min="0" value="0">
+            </p>
+
+            <!--
+                <output>: name="total" identifies the field when the
+                form is submitted, for="cupcakes slices" lists the ids
+                of the controls it is calculated from.
+            -->
+            <p>
+                <strong>Total price:</strong>
+                <output id="total" name="total" for="cupcakes slices">RM 0.00</output>
+            </p>
+
+            <p>
+                <input type="submit" value="Submit Pre-Order">
+                <input type="reset" value="Clear Form">
+            </p>
+        </form>
+    </div>
+    <!-- end of order form div -->
+
+    <!-- Another block element used for pick-up information -->
+    <h2 id="pickup">Pick-Up Information</h2>
+    <p>
+        Collect your order at <strong>Counter B, Cafeteria Level 1</strong>
+        between <span>9:00&nbsp;a.m.</span> and
+        <span>4:00&nbsp;p.m.</span>, Monday to Friday.
+        Orders that are not collected within <em>2 hours</em> of the chosen
+        slot will be released for walk-in sale.
+    </p>
+
+</div>
+<!-- end of content div -->
+
+<!-- ============================================================
+     SECTION 4: SIDEBAR (block-level <div id="sidebar">)
+     Price list. Uses the HTML entities &euro;, &lt; and &nbsp;
+     in addition to &reg; used in the header.
+     ============================================================ -->
+<div id="sidebar">
+    <h2 id="price-list">Price List</h2>
+    <ul>
+        <li>Butter cupcake &ndash; RM&nbsp;3.00</li>
+        <li>Chocolate cupcake &ndash; RM&nbsp;3.50</li>
+        <li>Cake slice (plain) &ndash; RM&nbsp;5.00</li>
+        <li>Cake slice (premium) &ndash; RM&nbsp;6.50</li>
+        <li>Whole 8&nbsp;inch cake &ndash; from &euro;12.00 (RM&nbsp;60.00)</li>
+    </ul>
+    <p>
+        <strong>Bulk deal:</strong> Orders &gt; 10 pieces get a free drink.
+        Orders &lt; 10 pieces are charged normal price.
+    </p>
+    <p>
+        Prices are inclusive of 6% service charge &mdash; no hidden fees!
+    </p>
+</div>
+
+<!-- ============================================================
+     SECTION 5: FOOTER (block-level <div id="footer">)
+     Uses &copy; and &reg; entities.
+     ============================================================ -->
+<div id="footer">
+    <p>
+        &copy; 2026 CampusBake&reg; Student Enterprise.
+        All rights reserved. &nbsp;|&nbsp; Call us: 09&ndash;668&nbsp;8888
+    </p>
+    <p>
+        <em>Best viewed in any modern browser. Last updated: 4 November 2026.</em>
+    </p>
+</div>
+
+</body>
+</html>
+
+<!-- ==================================================================
+     TESTING OBSERVATIONS (Problem A, step 7) - Report by: [your name]
+
+     Test 1: Click "Submit Pre-Order" with every field left empty.
+     ===============================================================
+     The page is NOT submitted. The browser blocks the request and
+     shows the tooltip "Please fill out this field." on the name input.
+     This works because the inputs carry the HTML5 attribute
+     required, and the name field is focused automatically on page load
+     thanks to autofocus. Once the name is filled in, the browser moves
+     its focus to the next required field (phone), then e-mail, then
+     the date and time fields, so the user is guided through the form
+     one error at a time. No network request reaches order.php.
+
+     Test 2: Enter "myemail" in the e-mail field and submit again.
+     ===============================================================
+     Submission is still blocked. Because the input uses
+     type="email", the browser checks the value against its built-in
+     e-mail pattern (something@something.tld) and reports
+     "Please include an '@' in the e-mail address. 'myemail' is
+     missing an '@'." Typing a value such as
+     "myemail@student.umt.edu.my" makes the error disappear and the
+     form submits normally.
+     Conclusion: client-side validation replaces the need for
+     JavaScript, but it is only a convenience - a real system must
+     still re-validate every field on the server side.
+
+     Test 3: Price calculator.
+     ===============================================================
+     Entering 2 cupcakes and 1 cake slice shows "RM 11.00" immediately,
+     with no button press, because the total is recalculated on every
+     oninput event of the form. Setting a quantity to a negative number
+     is prevented by min="0".
+
+     Test 4: W3C validation.
+     ===============================================================
+     Validated at https://validator.w3.org (Validate by File Upload):
+     "Document checking completed. No errors or warnings to show."
+     (Screenshot attached to the submission.)
+     ================================================================== -->
