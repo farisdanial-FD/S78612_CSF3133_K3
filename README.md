@@ -1,51 +1,68 @@
-# 🚀 S78612_CSF3133_K3 - Lab Portfolio & Web Interface
+# S78612_CSF3133_K3 — Portfolio Makmal Web
 
 <div align="center">
 
-[![Live Portal Status](https://img.shields.io/badge/GitHub%20Pages-Active-success?style=for-the-badge&logo=github)](https://farisdanial-fd.github.io/S78612_CSF3133_K3/)
-[![University](https://img.shields.io/badge/University-UMT-blue?style=for-the-badge)](https://www.umt.edu.my)
-[![Degree](https://img.shields.io/badge/Program-Software%20Engineering-orange?style=for-the-badge)]()
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Aktif-success?style=for-the-badge&logo=github)](https://farisdanial-fd.github.io/S78612_CSF3133_K3/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-**Repositori rasmi tugasan makmal dan projek pembangunan web bagi kursus S78612_CSF3133_K3 di Universiti Malaysia Terengganu (UMT).**
+**Repositori tugasan dan latihan pembangunan web bagi kursus S78612_CSF3133_K3 di Universiti Malaysia Terengganu (UMT).**
+
+[🌐 Buka Portal Portfolio](https://farisdanial-fd.github.io/S78612_CSF3133_K3/)
 
 </div>
 
 ---
 
-## 👨‍💻 Mengenai Pemilik Repositori
-* **Nama:** Muhammad Faris Danial Bin Izham
-* **Institusi:** Universiti Malaysia Terengganu (UMT)
-* **Pengajian:** Tahun Kedua Ijazah Sarjana Muda Sains Komputer (Kejuruteraan Perisian)
-* **Fokus Kemahiran:** Pembangunan Web, Kejuruteraan Perisian, Reka Bentuk UI/UX, dan Pengaturcaraan Berorientasikan Objektif (OOP).
+## Tentang projek
 
----
+Repositori ini mengumpulkan hasil tugasan makmal HTML dan CSS. Portal utama menyusun pautan ke halaman tugasan serta screenshot validation yang tersedia, mengikut makmal.
 
-## 🛠️ Teknologi yang Digunakan (Tech Stack)
-Repositori dan portal ini dibangunkan menggunakan teknologi berikut:
-* ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-* ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-* ![Git](https://img.shields.io/badge/git-%23F05032.svg?style=for-the-badge&logo=git&logoColor=white)
-* ![GitHub Pages](https://img.shields.io/badge/github%20pages-%23222222.svg?style=for-the-badge&logo=github&logoColor=white)
+- **4 makmal**
+- **32 halaman HTML**
+- **3 fail stylesheet CSS luaran**
+- **20 screenshot validation**
 
----
+## Kandungan makmal
 
-## 🌐 Pautan Pantas & Portal Interaktif Pensyarah
-Awak boleh akses portal interaktif yang direka khas untuk memudahkan semakan tugasan secara langsung di pelayar web:
+| Folder | Kandungan utama | Fail | Bukti validation |
+| :--- | :--- | :---: | :---: |
+| [`Lab 1/`](https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab%201) | Asas HTML, struktur dokumen, senarai, halaman peribadi dan contact | 5 HTML | 5 screenshot |
+| [`Lab 2/`](https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab%202) | Borang, jadual, elemen semantik dan latihan HTML lanjutan | 6 HTML | 2 screenshot |
+| [`Lab 3/`](https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab%203) | Elemen block/inline, div, entiti HTML, input HTML5 dan output | 10 HTML | 9 screenshot |
+| [`Lab 4/`](https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab%204) | CSS, struktur halaman, navigasi, video, Visit Terengganu dan e-Café Campus | 11 HTML + 3 CSS | 4 screenshot |
 
-* 👉 **[Buka Portal Interaktif Pensyarah (Live Preview)](https://farisdanial-fd.github.io/S78612_CSF3133_K3/)**
+### Halaman tugasan
 
----
+- **Lab 1:** `index.html`, `lab1.html`, `lab1_ExerA.html`, `lab1_ExerB.html`, `contact.html`
+- **Lab 2:** `lab2.html`, `lab2_ExerA.html`, `lab2_ExerB.html`, `form.html`, `semantic.html`, `table.html`
+- **Lab 3:** `lab3.html`, `lab3_ExerA.html`, `lab3_ExerB.html`, `intro5.html`, `block.html`, `div.html`, `entity.html`, `input5.html`, `inattribute5.html`, `output5.html`
+- **Lab 4:** `lab4.html`, `lab4_ExerA.html`, `lab4_ExerB.html`, `Class.html`, `Teks.html`, `structure.html`, `navigation.html`, `stail.html`, `stailID.html`, `stailLink.html`, `video.html`
 
-## 📁 Struktur Repositori & Kandungan Makmal
+Lab 4 turut mempunyai stylesheet `style.css`, `style_ExerA.css` dan `cafe.css`. Screenshot validation boleh dibuka dari galeri dalam portal. Setakat ini, folder Lab 3 belum mempunyai screenshot validation untuk `inattribute5.html`.
 
-| Direktori | Status | Keterangan / Laman Terlibat |
-| :--- | :---: | :--- |
-| **`Lab 1/`** | ✅ Selesai | Asas HTML, Struktur Dokumen, Borang Hubungi & Laman Web Kelab (`lab1.html`, `lab1_ExerA.html`, `lab1_ExerB.html`, `contact.html`) |
-| **`Lab 2/`** | ✅ Selesai | Borang Pendaftaran Lanjutan, Elemen Semantik, dan Jadual HTML (`lab2.html`, `form.html`, `semantic.html`, `table.html`) |
+## Teknologi
+
+- HTML5
+- CSS3
+- Git dan GitHub
+- GitHub Pages
+
+## Cara melihat portal
+
+Portal ini ialah laman statik dan tidak memerlukan proses build atau pemasangan dependency.
+
+1. Buka [Portal Portfolio](https://farisdanial-fd.github.io/S78612_CSF3133_K3/) untuk melihat versi dalam talian; atau
+2. Buka `index.html` dalam pelayar web untuk melihat secara lokal.
+
+## Pemilik
+
+**Muhammad Faris Danial Bin Izham**<br>
+Universiti Malaysia Terengganu (UMT) · Sains Komputer (Kejuruteraan Perisian)
 
 ---
 
 <div align="center">
-  <em>Dihasilkan dengan penuh teliti dan dedikasi oleh Faris Danial. Hak Cipta Terpelihara © 2026.</em>
+  <em>Dihasilkan oleh Faris Danial · © 2026</em>
 </div>
