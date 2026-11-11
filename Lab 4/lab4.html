@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Exercise 4 - Responsive Webpage</title>
+    <!-- Linking HTML to External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Semantic Header -->
+    <header>
+        <h1>Interactive Official Portal Lab 4</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#video-sec">Video</a></li>
+            <li><a href="#form-sec">Form</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content & Media (Video) Section -->
+    <section id="home">
+        <h2>Introduction</h2>
+        <p>Welcome to the responsive webpage built using a combination of HTML5 and CSS according to Lab 4 specifications.</p>
+        <p class="strikethrough-text">This text is an example of line-through text decoration.</p>
+    </section>
+
+    <section id="video-sec">
+        <h2>Related Video</h2>
+        <p>Please watch the video below:</p>
+        <!-- Video element with controls -->
+        <video width="400" height="300" controls>
+            <source src="upinipin.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Form Design Section -->
+    <section id="form-sec">
+        <h2>Feedback Form</h2>
+        <form action="#" method="post">
+            <label for="name">Name (Text Input):</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email (Text Input):</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label>Gender (Radio Buttons):</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male" style="display:inline;">Male</label>
+            <input type="radio" id="female" name="gender" value="female" style="margin-left: 20px;">
+            <label for="female" style="display:inline;">Female</label><br><br>
+
+            <label>Favorite Hobbies (Checkboxes):</label><br>
+            <input type="checkbox" id="hoby1" name="hoby1" value="Coding">
+            <label for="hoby1" style="display:inline;"> Programming</label><br>
+            <input type="checkbox" id="hoby2" name="hoby2" value="Reading">
+            <label for="hoby2" style="display:inline;"> Reading</label><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>This webpage is specifically developed to fulfill the requirements of Lab Exercise 4 in the Web-Based Interface Design course. It integrates semantic HTML5 elements and modern CSS styling.</p>
+    </section>
+
+    <!-- Semantic Footer -->
+    <footer>
+        <p>&copy; 2026 Universiti Malaysia Terengganu. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
