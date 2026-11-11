@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================================
+         Lab 4 - Problem A: Visit Terengganu
+         File: lab4_ExerA.html
+         External CSS: style.css (linked below)
+         Internal CSS: <style> block below (page-only rules)
+         ============================================================ -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Terengganu - Tourism Promotion</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style_ExerA.css">
+
+    <!-- Internal CSS: at least 2 rules for this page only -->
+    <style>
+        /* Internal rule 1: page-only heading colour (white on dark navy header) */
+        h1 {
+            color: #ffffff;
+        }
+
+        /* Internal rule 2: page-only caption style (dark slate, readable) */
+        .caption {
+            font-style: italic;
+            color: #334e68;
+        }
+
+        /* Internal rule 3: page-only trip section heading spacing */
+        #trip h2 {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body id="top">
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <h1>Visit Terengganu</h1>
+        <p class="center">Beautiful beaches, islands, food and culture — book your trip today!</p>
+    </header>
+
+    <!-- ================= NAVIGATION BAR ================= -->
+    <nav>
+        <ul>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#video">Video</a></li>
+            <li><a href="#trip">Book a Trip</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= SECTION 1: DESTINATIONS ================= -->
+    <section id="destinations">
+        <h2>Top Destinations</h2>
+
+        <article class="card">
+            <h3>Pulau Kapas</h3>
+            <p>A peaceful island with clear water, white sand and great snorkelling spots.</p>
+            <p>Promotion: <span class="old-price">RM 299</span> <span class="price">RM 199</span> per person</p>
+        </article>
+
+        <article class="card">
+            <h3>Pantai Batu Buruk</h3>
+            <p>Popular beach in Kuala Terengganu, famous for sunset views and local food stalls.</p>
+            <p>Promotion: <span class="old-price">RM 249</span> <span class="price">RM 169</span> per person</p>
+        </article>
+
+        <article class="card">
+            <h3>Tasik Kenyir</h3>
+            <p>Malaysia's largest man-made lake, perfect for nature, fishing and houseboat trips.</p>
+            <p>Promotion: <span class="old-price">RM 349</span> <span class="price">RM 249</span> per person</p>
+        </article>
+
+        <!-- Meter: seats filled -->
+        <p class="center">
+            Trip seats filled:
+            <meter min="0" max="40" value="28">28 out of 40</meter>
+            28 / 40 seats
+        </p>
+    </section>
+
+    <!-- ================= SECTION 2: VIDEO ================= -->
+    <section id="video">
+        <h2>Watch Terengganu</h2>
+
+        <figure class="center">
+            <!-- Replace the src below with your own video file if needed, e.g. terengganu.mp4 -->
+            <video width="640" height="360" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <figcaption class="caption">Discover the beauty of Terengganu — beaches, islands and nature.</figcaption>
+        </figure>
+    </section>
+
+    <!-- ================= SECTION 3: TRIP / FORM ================= -->
+    <section id="trip">
+        <h2>Book Your Trip</h2>
+
+        <form class="trip-form" action="#" method="post">
+            <p>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required>
+            </p>
+
+            <p>
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <fieldset>
+                <legend>Traveller Type</legend>
+                <label><input type="radio" name="traveller" value="student"> Student</label>
+                <label><input type="radio" name="traveller" value="staff"> Staff</label>
+                <label><input type="radio" name="traveller" value="public"> Public</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Interests</legend>
+                <label><input type="checkbox" name="interest" value="islands"> Islands</label>
+                <label><input type="checkbox" name="interest" value="food"> Food</label>
+                <label><input type="checkbox" name="interest" value="culture"> Culture</label>
+                <label><input type="checkbox" name="interest" value="nature"> Nature</label>
+            </fieldset>
+
+            <p><input type="submit" value="Submit"></p>
+        </form>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>&copy; 2026 Visit Terengganu Tourism Office. All rights reserved.</p>
+        <address>
+            Contact us:
+            <a href="/cdn-cgi/l/email-protection#c5acaba3aa85b3acb6acb191a0b7a0aba2a2a4abb0eba0bda4a8b5a9a0eba6aaa8"><span class="__cf_email__" data-cfemail="f49d9a929bb4829d879d80a09186919a9393959a81da918c9599849891da979b99">[email&#160;protected]</span></a>
+        </address>
+    </footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a58bcd71def60ce9',t:'MTc5NDM4NDQzOA=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a58bcd71def60ce9',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

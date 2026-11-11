@@ -1,0 +1,145 @@
+/* ============================================================
+   Lab 4 - Problem B: e-Café Campus
+   File: cafe.css (External CSS)
+   Navigation bar styles moved here from the original <style> block,
+   then extended (Part 2, item 5).
+   Palette: dark coffee brown + white + amber (high contrast)
+   ============================================================ */
+
+/* ---------- General page styling ---------- */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #3e2723;              /* very dark brown text on light bg */
+    background-color: #fff8e7;   /* warm cream page background */
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* ---------- Header banner ---------- */
+header {
+    background-color: #4e342e;   /* dark coffee brown banner */
+    color: #ffffff;              /* white text on dark brown */
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    color: #ffffff;
+}
+
+/* ---------- Navigation bar (moved + extended) ---------- */
+nav ul {
+    list-style-type: none;   /* fixed: was "no" */
+    margin: 0;
+    padding: 0;
+    background-color: #4e342e;
+    text-align: center;
+    border-radius: 8px;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    display: block;          /* links displayed as blocks */
+    color: #ffffff;
+    text-decoration: none;   /* no underline */
+    text-transform: uppercase;
+    padding: 12px 18px;
+    background-color: #4e342e;
+}
+
+/* Nav link states: white on dark brown (override general a:link) */
+nav a:link,
+nav a:visited {
+    color: #ffffff;
+    background-color: #4e342e;
+}
+
+/* Different background colour on hover: amber bg + dark text */
+nav a:hover {
+    background-color: #ffb300;
+    color: #3e2723;
+}
+
+nav a:active {
+    background-color: #ff8f00;
+    color: #3e2723;
+}
+
+/* ---------- Sections ---------- */
+section {
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #ffffff;   /* white section, dark brown text */
+    color: #3e2723;
+    border: 2px solid #8d6e63;
+    border-radius: 8px;
+}
+
+h2 {
+    text-decoration: underline;
+    color: #4e342e;              /* dark brown on white */
+}
+
+h3 {
+    color: #4e342e;
+}
+
+/* ---------- Responsive video ---------- */
+video {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #4e342e;
+    border-radius: 8px;
+}
+
+/* ---------- Video caption ---------- */
+figcaption {
+    font-style: italic;
+    color: #3e2723;              /* dark brown, readable */
+    text-align: center;
+    padding: 8px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #4e342e;
+    color: #ffffff;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+/* Footer text must stay white: override the general p rule
+   (p { color: #3e2723 } in the internal CSS would otherwise
+   make the footer text dark brown on dark brown = invisible) */
+footer p {
+    color: #ffffff;
+    text-align: center;
+}
+
+footer address {
+    color: #ffffff;
+    font-style: normal;
+}
+
+footer a:link,
+footer a:visited {
+    color: #ffcc80;              /* light amber on dark brown */
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+footer a:active {
+    color: #ffb300;
+}

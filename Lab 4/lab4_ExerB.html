@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================================
+         Lab 4 - Problem B: e-Café Campus (Debugging and Extend)
+         File: lab4_ExerB.html
+         External CSS: cafe.css (linked below)
+         ============================================================ -->
+    <meta charset="utf-8">
+    <!-- Added viewport meta tag for responsive design (Part 2, item 7) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Café Campus</title>
+
+    <!-- External CSS: navigation bar styles moved to cafe.css -->
+    <link rel="stylesheet" href="cafe.css">
+
+    <!-- Internal CSS: corrected original styles -->
+    <style type="text/css">
+        /* Link states in correct order: link -> visited -> hover -> active */
+        /* All colours are dark enough to read on white / cream background */
+        a:link { color: #0d47a1; }
+        a:visited { color: #4a148c; }
+        a:hover { color: #bf360c; }
+        a:active { color: #b71c1c; }
+
+        /* Heading with a line above it */
+        h1 { text-decoration: overline; }
+
+        /* Paragraph text */
+        p { color: #3e2723; text-align: justify; }
+
+        /* Intro paragraph (class selector, matches class="intro" in HTML) */
+        .intro {
+            font-size: 18px;
+            background-color: #ffecb3;
+            color: #3e2723;
+            padding: 10px;
+        }
+
+        /* Highlighted prices (class selector with dot) */
+        .highlight {
+            font-weight: bold;
+            color: #b71c1c;
+        }
+
+        /* Old promotion price: crossed out */
+        .old-price {
+            text-decoration: line-through;
+            color: #5d4037;
+        }
+
+        /* Menu item cards (duplicate id="item" changed to class="item") */
+        .item {
+            border: 2px solid #8d6e63;
+            background-color: #fff8e7;
+            color: #3e2723;
+            padding: 10px;
+            margin: 10px 0;
+            width: 90%;
+        }
+
+        /* Responsive video */
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Feedback form styling */
+        .feedback-form {
+            background-color: #fff8e7;
+            color: #3e2723;
+            padding: 15px;
+            border: 2px solid #4e342e;
+            width: 90%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .feedback-form input[type="text"],
+        .feedback-form input[type="email"] {
+            width: 90%;
+            padding: 8px;
+            border: 2px solid #5d4037;
+            color: #3e2723;
+            background-color: #ffffff;
+        }
+
+        .feedback-form input[type="submit"] {
+            background-color: #4e342e;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .feedback-form input[type="submit"]:hover {
+            background-color: #6d4c41;
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+         ERROR LIST (Part 1, item 2) : All errors found in given code
+         Error 1 (Line 7) : HTML comment tags used inside the style block.
+             CSS comments must use slash star instead of HTML comment tags.
+         Error 2 (Line 9) : list-style-type value "no" is invalid.
+             Should be "none".
+         Error 3 (Lines 13 to 16) : Link states in wrong order. The hover
+             rule was written before the visited rule, so visited links
+             overrode hover. Correct order is link, visited, hover, active.
+         Error 4 (Line 17) : text-decoration value "overlined" is invalid.
+             Should be "overline".
+         Error 5 (Line 18) : The p rule is missing a colon after color.
+             Should be color colon #333333.
+         Error 6 (Lines 19 to 22) : The intro rule is missing its closing
+             brace before the next rule.
+         Error 7 (Line 22) : The highlight rule is missing a dot. Class
+             selectors need a dot, so it should be .highlight.
+         Error 8 (Line 19 vs Line 41) : CSS uses #intro (ID selector) but
+             HTML uses class intro. They do not match. Changed to .intro.
+         Error 9 (Line 34) : The Menu link href is missing the hash sign.
+             Should be href hash menu so it jumps to the menu section.
+         Error 10 (Lines 42 and 46) : Duplicate id item on two articles.
+             IDs must be unique. Changed to class item.
+         Error 11 (Line 53) : The video tag is missing the controls
+             attribute, so the video cannot be played by the user.
+         Error 12 (Line 54) : The source type "mp4" is incorrect MIME type.
+             Should be "video/mp4".
+    -->
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <h1>e-Café Campus</h1>
+    </header>
+
+    <!-- ================= NAVIGATION BAR ================= -->
+    <!-- Styles for this nav are in cafe.css (external stylesheet) -->
+    <nav>
+        <ul>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#video">Video</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ================= SECTION: MENU ================= -->
+    <section id="menu">
+        <h2>Today's Menu</h2>
+        <p class="intro">Freshly brewed coffee and local delights every day.</p>
+
+        <article class="item">
+            <h3>Kopi Tarik</h3>
+            <p>Only <span class="old-price">RM 4.50</span> <span class="highlight">RM 3.50</span></p>
+        </article>
+
+        <article class="item">
+            <h3>Nasi Lemak</h3>
+            <p>Only <span class="old-price">RM 6.00</span> <span class="highlight">RM 5.00</span></p>
+        </article>
+    </section>
+
+    <!-- ================= SECTION: VIDEO ================= -->
+    <section id="video">
+        <h2>Watch Our Story</h2>
+
+        <figure>
+            <!-- Replace the src below with your own video file if needed, e.g. cafe.mp4 -->
+            <video width="400" height="300" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <figcaption>Inside e-Café Campus — fresh coffee, friendly service, every day.</figcaption>
+        </figure>
+    </section>
+
+    <!-- ================= SECTION: FEEDBACK (NEW - Part 2) ================= -->
+    <section id="feedback">
+        <h2>Feedback</h2>
+
+        <form class="feedback-form" action="#" method="post">
+            <p>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required>
+            </p>
+
+            <p>
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <fieldset>
+                <legend>Visit Type</legend>
+                <label><input type="radio" name="visit" value="dine-in"> Dine-in</label>
+                <label><input type="radio" name="visit" value="take-away"> Take-away</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Favourite Items</legend>
+                <label><input type="checkbox" name="favourite" value="kopi-tarik"> Kopi Tarik</label>
+                <label><input type="checkbox" name="favourite" value="nasi-lemak"> Nasi Lemak</label>
+                <label><input type="checkbox" name="favourite" value="teh-tarik"> Teh Tarik</label>
+                <label><input type="checkbox" name="favourite" value="roti-bakar"> Roti Bakar</label>
+            </fieldset>
+
+            <p><input type="submit" value="Submit"></p>
+        </form>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="contact">
+        <p>&copy; 2026 e-Café Campus</p>
+        <address>
+            Contact us:
+            <a href="/cdn-cgi/l/email-protection#a4ccc1c8c8cbe4c1c7c5c2c1c7c5c9d4d1d78ac1dcc5c9d4c8c18ac7cbc9"><span class="__cf_email__" data-cfemail="a0c8c5cccccfe0c5c3c1c6c5c3c1cdd0d5d38ec5d8c1cdd0ccc58ec3cfcd">[email&#160;protected]</span></a>
+        </address>
+    </footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a58bcda98ad50ce9',t:'MTc5NDM4NDQ0Ng=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a58bcda98ad50ce9',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

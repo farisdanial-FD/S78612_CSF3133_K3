@@ -1,0 +1,239 @@
+/* ============================================================
+   Lab 4 - Problem A: Visit Terengganu
+   File: style_ExerA.css  (External CSS)
+   Palette: dark navy + white + amber (high contrast, easy to read)
+   ============================================================ */
+
+/* ---------- General page styling ---------- */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #102a43;              /* very dark navy text on light bg */
+    background-color: #eaf2f8;   /* light blue-grey page background */
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* ---------- Header banner ---------- */
+header {
+    background-color: #0b3d5f;   /* dark navy banner */
+    color: #ffffff;              /* white text on dark navy */
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #ffffff;
+}
+
+/* ---------- Headings: text-decoration ---------- */
+h1 {
+    text-decoration: overline;
+    text-align: center;
+    font-size: 32px;
+    color: #ffffff;              /* white on dark navy header */
+}
+
+h2 {
+    text-decoration: underline;
+    color: #0b3d5f;              /* dark navy on white section */
+    font-size: 24px;
+}
+
+h3 {
+    color: #065a82;              /* dark teal on light card */
+}
+
+/* ---------- Class selector: .center ---------- */
+.center {
+    text-align: center;
+}
+
+/* ---------- ID selectors ---------- */
+#destinations {
+    background-color: #ffffff;   /* white section, dark text */
+    color: #102a43;
+    padding: 15px;
+    border: 2px solid #0b3d5f;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+#video {
+    background-color: #ffffff;
+    color: #102a43;
+    padding: 15px;
+    border: 2px solid #0b3d5f;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+#trip {
+    background-color: #ffffff;
+    color: #102a43;
+    padding: 15px;
+    border: 2px solid #0b3d5f;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+/* ---------- Class selector: .card (destination articles) ---------- */
+.card {
+    background-color: #eaf6ff;   /* light blue card, dark text */
+    color: #102a43;
+    border: 2px solid #065a82;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 10px 0;
+    width: 90%;
+}
+
+/* ---------- Prices: old price crossed out, new price highlighted ---------- */
+.old-price {
+    text-decoration: line-through;
+    color: #5f6368;              /* dark grey, still readable */
+}
+
+.price {
+    font-weight: bold;
+    color: #b00020;              /* dark red on light bg, high contrast */
+    font-size: 18px;
+}
+
+/* ---------- Navigation bar ---------- */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #0b3d5f;
+    text-align: center;
+    border-radius: 8px;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 12px 18px;
+    background-color: #0b3d5f;
+}
+
+/* ---------- Interactive link states (correct order) ---------- */
+/* All colours are dark enough to read on the light page background */
+a:link {
+    color: #0b5394;
+}
+
+a:visited {
+    color: #6a1b9a;
+}
+
+a:hover {
+    color: #b45309;
+}
+
+a:active {
+    color: #b00020;
+}
+
+/* Nav links: white on dark navy (must override a:link above) */
+nav a:link,
+nav a:visited {
+    color: #ffffff;
+    background-color: #0b3d5f;
+}
+
+nav a:hover {
+    background-color: #ffb703;   /* amber background */
+    color: #102a43;              /* dark text on amber, high contrast */
+}
+
+nav a:active {
+    background-color: #f2a900;
+    color: #102a43;
+}
+
+/* ---------- Responsive video ---------- */
+video {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #0b3d5f;
+    border-radius: 8px;
+}
+
+/* ---------- Trip form ---------- */
+.trip-form {
+    background-color: #eaf6ff;
+    color: #102a43;
+    padding: 15px;
+    border: 2px solid #0b3d5f;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.trip-form input[type="text"],
+.trip-form input[type="email"] {
+    width: 90%;
+    padding: 8px;
+    border: 2px solid #334e68;
+    color: #102a43;
+    background-color: #ffffff;
+}
+
+.trip-form input[type="submit"] {
+    background-color: #0b3d5f;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.trip-form input[type="submit"]:hover {
+    background-color: #065a82;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #0b3d5f;
+    color: #ffffff;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+/* Keep footer text white (explicit, so no general p rule can override it) */
+footer p {
+    color: #ffffff;
+    text-align: center;
+}
+
+footer address {
+    color: #ffffff;
+    font-style: normal;
+}
+
+footer a:link,
+footer a:visited {
+    color: #ffd166;              /* light amber on dark navy */
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+footer a:active {
+    color: #ffb703;
+}
