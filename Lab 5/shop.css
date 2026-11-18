@@ -1,0 +1,71 @@
+/* Page background: show the paper image once at the top right. */
+body {
+  margin: 0;
+  background-color: #FBFAF7;
+  background-image: url("paper.gif");
+  background-repeat: no-repeat;
+  background-position: right top;
+  color: #2C2C2C;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.page { width: 92%; max-width: 980px; margin: 24px auto; }
+h1, h2 { font-family: Merriweather, Georgia, serif; }
+p { line-height: 1.6; }
+
+/* Bookshop banner: darken the photo so the white text stays readable. */
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("books.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 56px 16px;
+  color: white;
+  text-align: center;
+}
+
+header h1 { color: white; font-size: 36px; margin: 0 0 10px; }
+header p { margin: 0; }
+
+/* Horizontal navigation: Home is active, and links darken on hover. */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+nav li { float: left; }
+nav a { display: block; color: white; padding: 14px 16px; text-decoration: none; }
+nav a.active { background-color: #08764E; }
+nav a:hover, nav a:focus { background-color: #111; }
+
+/* Main content and product table: one border, alternating rows, and hover. */
+main { background-color: white; padding: 24px; }
+main h2 { color: #1B4F72; margin: 0 0 16px; }
+#product { border-collapse: collapse; width: 100%; }
+#product th, #product td { border: 1px solid #ddd; padding: 8px; }
+
+#product th {
+  background-color: #08764E;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+#product tbody tr:nth-child(even) { background-color: #f2f2f2; }
+#product tbody tr:hover { background-color: #ddd; }
+#product td:last-child { text-align: right; }
+
+/* Footer and smaller-screen spacing. */
+footer { background-color: #f1f1f1; text-align: center; padding: 14px; }
+
+@media (max-width: 560px) {
+  .page { margin: 12px auto; }
+  header { padding: 40px 12px; }
+  header h1 { font-size: 30px; }
+  main { padding: 14px; }
+}

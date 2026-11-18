@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Bookstore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&amp;family=Roboto:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="shop.css">
+  <style>
+    h1 { text-align: center; color: #1B4F72; }
+  </style>
+</head>
+<body>
+  <!--
+    Corrections (line numbers refer to the original code in the PDF):
+    Error 1 (shop.html, line 7): Changed rel="stylesheets" to rel="stylesheet".
+    Error 2 (shop.html, lines 10–12): Moved the style block from body to head.
+    Error 3 (shop.html, line 18): Used a colon in color: #1B4F72, not an equals sign.
+      The valid blue rule is in head; Part 2 overrides it with white for the banner.
+    Error 4 (shop.css, line 2): Corrected Robotto to Roboto.
+    Error 5 (shop.css, line 4): Changed no repeat to no-repeat.
+    Error 6 (shop.css, line 5): Corrected bacground-position to background-position.
+    Error 7 (shop.css, line 18): Changed display: inline to display: block.
+    Error 8 (shop.css, line 23): Changed li:a:hover to li a:hover.
+    Error 9 (shop.css, lines 26, 30, 34, 37, 40): Used #product to match the HTML id.
+    Error 10 (shop.css, line 27): Changed collapsed to collapse.
+    Error 11 (shop.css, line 34): Used nth-child(even) to style all even body rows.
+    Error 12 (shop.css, line 37): Changed tr:hovered to tr:hover.
+    Error 13 (shop.css, line 45): Added the missing semicolon after #f1f1f1.
+  -->
+  <div class="page">
+    <header id="home">
+      <h1>Campus Bookstore</h1>
+      <p>Textbooks, stationery and more for every student.</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#home" class="active" aria-current="page">Home</a></li>
+        <li><a href="#books">Books</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="books" aria-labelledby="books-title">
+        <h2 id="books-title">Books and Supplies</h2>
+        <table id="product" aria-labelledby="books-title">
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Category</th>
+              <th scope="col">Price (RM)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Web Design Basics</td><td>Textbook</td><td>45.00</td></tr>
+            <tr><td>A4 Notebook</td><td>Stationery</td><td>6.50</td></tr>
+            <tr><td>USB Drive 32GB</td><td>Gadget</td><td>25.00</td></tr>
+            <tr><td>Highlighter Set</td><td>Stationery</td><td>9.90</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer id="contact">
+      &copy; 2026 Campus Bookstore &middot; Contact: Visit the bookstore counter.
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  background-color: #FBF7F0;
+  color: #2C2C2C;
+  font-family: "Open Sans", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, nav a { font-family: Poppins, Arial, sans-serif; }
+
+/* Festival banner */
+header {
+  background-image: url("header-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 76px 16px;
+  color: white;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: 42px;
+  line-height: 1.2;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+  margin: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Horizontal menu */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+nav li { float: left; }
+nav a { display: block; padding: 14px 20px; color: white; text-decoration: none; }
+nav a.active { background-color: #E67E22; }
+nav a:hover, nav a:focus { background-color: #111; }
+
+/* About and menu sections */
+main { width: 90%; max-width: 980px; margin: 0 auto; padding: 30px 0; }
+section + section { margin-top: 20px; }
+h2 { margin: 0 0 18px; font-size: 24px; line-height: 1.45; }
+main p { margin: 0 0 16px; text-align: justify; line-height: 1.7; }
+
+/* Menu table */
+#menu-table { border-collapse: collapse; width: 100%; }
+#menu-table th, #menu-table td { border: 1px solid #ddd; padding: 8px 10px; }
+
+#menu-table th {
+  background-color: #E67E22;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#menu-table tbody tr { background-color: #F2F2F2; }
+#menu-table tbody tr:nth-child(even) { background-color: #FBF7F0; }
+#menu-table tbody tr:hover { background-color: #FDEBD0; }
+#menu-table td:last-child { text-align: right; }
+
+footer { background-color: #EFE6D8; text-align: center; padding: 16px; font-size: 14px; }
+footer a { color: inherit; }
+
+@media (max-width: 560px) {
+  header { padding: 48px 12px; }
+  header h1 { font-size: 32px; }
+  nav a { padding: 12px; }
+  #menu-table th, #menu-table td { padding: 8px 6px; }
+}
