@@ -1,0 +1,79 @@
+/* Page layout and introductory banner. */
+:root {
+  --ink: #24203b;
+  --muted: #554c69;
+  --purple: #50387d;
+  --line: #ded7e9;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: #f6f3fa; color: var(--ink); font: 1rem/1.55 system-ui, sans-serif; }
+.grade-shell { width: min(54rem, calc(100% - 2rem)); margin: 0 auto; padding: 2rem 0 1rem; }
+.grade-hero {
+  padding: clamp(1.4rem, 5vw, 2.5rem);
+  border-radius: 1.2rem;
+  background: radial-gradient(ellipse at 100% 100%, #705298, transparent 65%), #362553;
+  color: white;
+}
+.eyebrow { margin: 0; color: #eddaff; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; }
+h1 { margin: 0.25rem 0 0.5rem; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; }
+.grade-hero > p:last-child { margin: 0; color: #f1e9fb; }
+
+/* Form and grade scale fit side-by-side on wide screens. */
+.grade-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 1rem; margin-top: 1rem; align-items: start; }
+.card {
+  padding: clamp(1rem, 4vw, 1.5rem);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 4px 14px #3625530c;
+}
+h2 { margin: 0 0 0.65rem; font-size: 1.25rem; }
+.hint { margin: 0 0 0.8rem; color: var(--muted); }
+label { display: block; margin-bottom: 0.25rem; font-weight: 650; }
+input {
+  display: block;
+  width: 100%;
+  min-height: 2.8rem;
+  margin-bottom: 0.8rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #ada0be;
+  border-radius: 0.55rem;
+  color: var(--ink);
+  font: inherit;
+}
+
+/* Buttons highlight on hover and have a visible keyboard focus. */
+.form-actions { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+button {
+  min-height: 2.8rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid transparent;
+  border-radius: 0.55rem;
+  background: var(--purple);
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 650;
+}
+button:hover { background: #38235d; }
+button.secondary { border-color: #b8a9cb; background: white; color: var(--purple); }
+button.secondary:hover { background: #efe9f7; }
+:focus-visible { outline: 3px solid #7756a5; outline-offset: 3px; }
+
+/* Result message, time of check, and the generated grade table. */
+.feedback { margin-top: 1rem; padding: 0.75rem; border: 1px solid var(--line); border-radius: 0.65rem; background: #faf8fc; overflow-wrap: anywhere; }
+#result { margin: 0 0 0.2rem; font-size: 1.2rem; font-weight: 800; }
+#checkedAt { margin: 0; color: var(--muted); font-size: 0.86rem; }
+#tableContainer:not(:empty) { margin-top: 0.9rem; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 0.55rem 0.65rem; border: 1px solid var(--line); text-align: left; }
+th { background: var(--purple); color: white; }
+tbody tr:nth-child(even) { background: #f5f1f9; }
+.range-note { margin: 0.65rem 0 0; color: var(--muted); font-size: 0.86rem; }
+footer { margin-top: 1rem; text-align: center; color: var(--muted); font-size: 0.86rem; }
+
+@media (max-width: 640px) {
+  .grade-shell { padding-top: 1rem; }
+  .grade-layout { grid-template-columns: 1fr; }
+}

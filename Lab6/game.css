@@ -1,0 +1,117 @@
+/* Game page: set the palette, spacing and banner. */
+:root {
+  --ink: #162d43;
+  --muted: #526375;
+  --blue: #1d5279;
+  --border: #d8e3ec;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  background: #f2f6f9;
+  color: var(--ink);
+  font: 1rem/1.55 system-ui, sans-serif;
+}
+
+.shell { width: min(52rem, calc(100% - 2rem)); margin: 0 auto; padding: 2rem 0 1rem; }
+.hero {
+  padding: clamp(1.4rem, 5vw, 2.4rem);
+  border-radius: 1.2rem;
+  color: white;
+  background: repeating-radial-gradient(ellipse at 100% 45%, transparent 0 22px, #ffffff1a 23px 24px),
+              linear-gradient(120deg, #13324b, #245f84);
+}
+.hero .eyebrow { margin: 0; color: #b8e3f8; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+h1 { margin: 0.25rem 0 0.5rem; font-size: clamp(2rem, 6vw, 3.25rem); line-height: 1.1; }
+.hero > p:last-child { margin: 0; color: #e3f1fa; }
+
+/* Reusable cards, the name input, and controls. */
+.card {
+  margin-top: 1rem;
+  padding: clamp(1rem, 4vw, 1.5rem);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 4px 14px #162d4309;
+}
+
+h2 { margin: 0 0 0.8rem; font-size: 1.25rem; }
+.player-form { display: flex; align-items: end; flex-wrap: wrap; gap: 0.65rem; }
+.player-form label { flex: 1 1 12rem; max-width: 24rem; font-weight: 650; }
+.player-form input {
+  display: block;
+  width: 100%;
+  min-height: 2.8rem;
+  margin-top: 0.25rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #9db2c3;
+  border-radius: 0.55rem;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 400;
+}
+
+button {
+  min-height: 2.8rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid transparent;
+  border-radius: 0.55rem;
+  background: var(--blue);
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 650;
+}
+button:hover:not(:disabled) { background: #103855; }
+button:disabled { background: #dce6ef; color: #3d5366; cursor: default; }
+button.secondary { border-color: #a8bdcd; background: white; color: var(--blue); }
+button.secondary:hover { background: #e9f2f9; }
+:focus-visible { outline: 3px solid #30769f; outline-offset: 3px; }
+
+/* Match, fixed-size move images, and score totals. */
+.move-buttons, .history-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.match { display: flex; align-items: center; justify-content: center; gap: clamp(0.4rem, 3vw, 1.5rem); margin-top: 1.25rem; }
+.match figure { margin: 0; text-align: center; }
+.match figcaption { margin: 0 0 0.35rem; font-weight: 700; }
+.match img, .placeholder { display: block; width: 120px; height: 120px; margin: 0 auto; }
+.placeholder {
+  display: grid;
+  place-items: center;
+  border: 1px dashed #9fb8cb;
+  border-radius: 1rem;
+  background: #ecf4fa;
+  color: #4e6e85;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+.match figure p { margin: 0.3rem 0 0; color: var(--muted); }
+.versus { color: var(--muted); font-size: 0.8rem; font-weight: 800; }
+.scoreboard { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; margin: 0; }
+.scoreboard > div { padding: 0.65rem 0.35rem; border-radius: 0.6rem; text-align: center; }
+.scoreboard dt { font-size: 0.85rem; font-weight: 650; }
+.scoreboard dd { margin: 0; font-size: 1.4rem; font-weight: 800; }
+.win { background: #e3f3e8; color: #155731; }
+.lose { background: #fbe9e7; color: #8d2f25; }
+.draw { background: #ebeff2; color: #415463; }
+#result { font-weight: 750; }
+#welcome, #result, #summary { margin: 0.8rem 0; overflow-wrap: anywhere; }
+#welcome:empty, #result:empty, #summary:empty, #startTime:empty { display: none; }
+
+/* History table and footer. */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid var(--border); padding: 0.55rem 0.65rem; text-align: left; }
+th { background: #173b56; color: white; }
+tbody tr:nth-child(even) { background: #f3f7fb; }
+.history-actions { margin-top: 0.9rem; }
+#summary { margin-bottom: 0; color: var(--blue); font-weight: 700; }
+footer { padding-top: 1rem; text-align: center; color: var(--muted); font-size: 0.85rem; }
+footer p { margin: 0.2rem 0; }
+
+@media (max-width: 420px) {
+  .shell { padding-top: 1rem; }
+  .match img, .placeholder { width: 94px; height: 94px; }
+  th, td { padding: 0.4rem; font-size: 0.85rem; }
+}

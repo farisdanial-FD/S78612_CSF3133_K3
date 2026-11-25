@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rock, Paper, Scissors | Lab 6</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <div class="shell">
+    <!-- Introduce the game and explain how to start. -->
+    <header class="hero">
+      <p class="eyebrow">Computer Science Club &middot; Lab 6 / Problem A</p>
+      <h1>Rock, Paper, Scissors</h1>
+      <p>Enter your name, start the game, and play against the computer.</p>
+    </header>
+
+    <main>
+      <!-- Player setup: Start Game validates the name. -->
+      <section class="card" aria-labelledby="player-title">
+        <h2 id="player-title">Player setup</h2>
+        <form class="player-form" onsubmit="return false;">
+          <label for="playerName">Your name
+            <input id="playerName" type="text" maxlength="60" autocomplete="given-name" placeholder="Enter your name">
+          </label>
+          <button id="startButton" type="submit" onclick="startGame()">Start Game</button>
+        </form>
+        <p id="welcome" role="status"></p>
+      </section>
+
+      <!-- Play a round and show the two moves. -->
+      <section class="card" aria-labelledby="game-title">
+        <h2 id="game-title">Choose your move</h2>
+        <div class="move-buttons">
+          <button id="rockButton" type="button" onclick="playRound('rock')">Rock</button>
+          <button type="button" onclick="playRound('paper')">Paper</button>
+          <button type="button" onclick="playRound('scissors')">Scissors</button>
+        </div>
+        <div class="match">
+          <figure>
+            <figcaption>You</figcaption>
+            <span id="playerPlaceholder" class="placeholder" aria-hidden="true">?</span>
+            <img id="playerImg" src="rock.png" width="120" height="120" alt="" hidden>
+            <p id="playerMove">Waiting</p>
+          </figure>
+          <span class="versus" aria-hidden="true">VS</span>
+          <figure>
+            <figcaption>Computer</figcaption>
+            <span id="computerPlaceholder" class="placeholder" aria-hidden="true">?</span>
+            <img id="computerImg" src="rock.png" width="120" height="120" alt="" hidden>
+            <p id="computerMove">Waiting</p>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Show the last result and running totals. -->
+      <section class="card" aria-labelledby="score-title">
+        <h2 id="score-title">Scoreboard</h2>
+        <p id="result" role="status"></p>
+        <dl class="scoreboard">
+          <div class="win"><dt>Wins</dt><dd><span id="wins">0</span></dd></div>
+          <div class="lose"><dt>Losses</dt><dd><span id="losses">0</span></dd></div>
+          <div class="draw"><dt>Draws</dt><dd><span id="draws">0</span></dd></div>
+        </dl>
+      </section>
+
+      <!-- The table body gains a row after each round. -->
+      <section class="card" aria-labelledby="history-title">
+        <h2 id="history-title">Round history</h2>
+        <div class="table-wrap">
+          <table id="history" aria-labelledby="history-title">
+            <thead>
+              <tr>
+                <th scope="col">Round</th>
+                <th scope="col">You</th>
+                <th scope="col">Computer</th>
+                <th scope="col">Result</th>
+              </tr>
+            </thead>
+            <tbody id="historyBody"></tbody>
+          </table>
+        </div>
+        <div class="history-actions">
+          <button type="button" onclick="showSummary()">Show Summary</button>
+          <button type="button" class="secondary" onclick="resetGame()">Reset</button>
+        </div>
+        <p id="summary" role="status"></p>
+      </section>
+    </main>
+
+    <!-- Display the start time for this session. -->
+    <footer>
+      <p id="startTime"></p>
+      <p>&copy; 2026 Computer Science Club</p>
+    </footer>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

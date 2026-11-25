@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Grade Calculator | Lab 6</title>
+  <link rel="stylesheet" href="grade.css">
+</head>
+<body>
+  <div class="grade-shell">
+    <!-- Page introduction. -->
+    <header class="grade-hero">
+      <p class="eyebrow">Lab 6 &middot; Problem B</p>
+      <h1>Student Grade Calculator</h1>
+      <p>Enter a name and a mark from 0 to 100 to see the grade.</p>
+    </header>
+
+    <main class="grade-layout">
+      <!-- Returning false from checkMark() keeps the result on this page. -->
+      <section class="card" aria-labelledby="form-title">
+        <h2 id="form-title">Check a mark</h2>
+        <form name="gradeForm" onsubmit="return checkMark()">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" autocomplete="name" placeholder="Enter a name" maxlength="80">
+
+          <label for="mark">Mark (0–100):</label>
+          <input type="text" id="mark" name="mark" inputmode="decimal" placeholder="e.g. 72">
+
+          <div class="form-actions">
+            <button type="submit">Check Grade</button>
+            <button type="button" class="secondary" onclick="randomMark()">Random Mark</button>
+          </div>
+        </form>
+        <!-- Display the grade and the date and time of the check. -->
+        <div id="gradeFeedback" class="feedback" hidden>
+          <p id="result" role="status"></p>
+          <p id="checkedAt"></p>
+        </div>
+      </section>
+
+      <!-- The JavaScript loop fills in all four grade bands. -->
+      <section class="card" aria-labelledby="scale-title">
+        <h2 id="scale-title">Grade scale</h2>
+        <p class="hint">See the cutoffs for A, B, C and F.</p>
+        <button type="button" onclick="showTable()" aria-controls="tableContainer">Show Grade Table</button>
+        <div id="tableContainer"></div>
+      </section>
+    </main>
+
+    <footer>Lab Exercise 6 &middot; JavaScript validation</footer>
+  </div>
+  <script src="grade.js"></script>
+</body>
+</html>
