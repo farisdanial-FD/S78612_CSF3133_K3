@@ -48,7 +48,7 @@ This repository contains HTML, CSS, and JavaScript coursework and lab exercises.
 
 Lab 4 includes the stylesheets `style.css`, `style_ExerA.css`, and `cafe.css`. Lab 5 includes `style.css`, `food.css`, `shop.css`, and `umt.css`, along with the image assets `books.jpg` and `header-bg.jpg`. Lab 5 validation screenshots (`validation_food_html.png`, `validation_food_css.png`, `validation_shop_html.png`, and `validation_shop_css.png`) are available in the portfolio gallery.
 
-Lab 6 includes the stylesheets `game.css`, `grade.css`, and `style.css`; the JavaScript files `form-validation.js`, `game.js`, `grade.js`, `guess-number.js`, `message.js`, `multiplication-table.js`, `numeric-validation.js`, and `script.js`; and the guide `kod-lab6.md`. Its visual assets are `paper.png`, `rock.png`, and `scissors.png` for the game, plus `pic_bulboff.gif` and `pic_bulbon.gif` for the light-bulb exercise. The portfolio gallery features 8 example output screenshots for the game and grade calculator; these are not validation screenshots.
+Lab 6 includes the stylesheets `game.css`, `grade.css`, and `style.css`, along with the JavaScript files `form-validation.js`, `game.js`, `grade.js`, `guess-number.js`, `message.js`, `multiplication-table.js`, `numeric-validation.js`, and `script.js`. Its visual assets are `paper.png`, `rock.png`, and `scissors.png` for the game, plus `pic_bulboff.gif` and `pic_bulbon.gif` for the light-bulb exercise. The portfolio gallery features 8 example output screenshots for the game and grade calculator; these are not validation screenshots.
 
 Lab 3 does not yet have a validation screenshot for `inattribute5.html`.
 
