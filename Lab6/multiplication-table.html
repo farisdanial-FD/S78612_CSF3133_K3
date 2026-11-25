@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multiplication Table</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h2 { color: #333; }
+    table { border-collapse: collapse; width: 100%; }
+    td { border: 1px solid #ddd; text-align: center; padding: 8px; }
+    input, button { padding: 10px; margin: 5px 0; }
+    #tableContainer { margin-top: 16px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h2>Multiplication Table Generator</h2>
+  <p>Enter a whole number from 1 to 50 for each field.</p>
+  <label for="rows">Enter number of rows:</label>
+  <input type="number" id="rows" min="1" max="50" placeholder="Rows">
+  <br>
+  <label for="columns">Enter number of columns:</label>
+  <input type="number" id="columns" min="1" max="50" placeholder="Columns">
+  <br>
+  <button type="button" onclick="generateTable()">Generate Table</button>
+  <div id="tableContainer"></div>
+  <script src="multiplication-table.js"></script>
+</body>
+</html>

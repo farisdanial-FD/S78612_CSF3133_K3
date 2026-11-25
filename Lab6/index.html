@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Basics Quiz | Lab 6</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <p class="eyebrow">CSF3133 &middot; Lab Exercise 6</p>
+      <h1>Web Basics Quiz</h1>
+      <p>Test what you know about HTML, CSS, and JavaScript.</p>
+    </header>
+
+    <main>
+      <section id="intro" class="card" aria-labelledby="intro-title">
+        <p class="eyebrow">Quick practice</p>
+        <h2 id="intro-title">Ready to start?</h2>
+        <p>Pick one answer per question. You’ll get feedback before you move on.</p>
+        <ul class="facts">
+          <li><strong id="question-count">6</strong> questions</li>
+          <li><strong id="seconds-per-question">20</strong> seconds per question</li>
+        </ul>
+        <button id="start-button" type="button">Start quiz <span aria-hidden="true">&rarr;</span></button>
+      </section>
+
+      <section id="quiz" class="card" aria-labelledby="question" hidden>
+        <div class="quiz-meta">
+          <p id="question-progress" class="eyebrow">Question 1 of 6</p>
+          <p class="timer" id="timer">Time left: <strong id="time-left">20s</strong></p>
+        </div>
+        <progress id="progress-bar" value="1" max="6" aria-label="Question progress"></progress>
+
+        <form id="quiz-form">
+          <fieldset>
+            <legend id="question" tabindex="-1">Quiz question</legend>
+            <div id="options" class="options"></div>
+          </fieldset>
+
+          <section aria-label="Answer feedback">
+            <p id="feedback" class="feedback" role="status"></p>
+          </section>
+
+          <div class="actions">
+            <button id="submit-button" type="submit">Submit answer</button>
+            <button id="next-button" type="button" hidden>Next question</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <section id="results" class="card results" aria-labelledby="result-title" hidden>
+        <p class="eyebrow">Quiz complete</p>
+        <h2 id="result-title" tabindex="-1">Your final score</h2>
+        <p id="score" class="score" role="status"></p>
+        <p id="result-detail"></p>
+        <button id="restart-button" type="button">Try again <span aria-hidden="true">&rarr;</span></button>
+      </section>
+      <p class="credit">Lab Module 6 &middot; JavaScript</p>
+    </footer>
+  </div>
+</body>
+</html>

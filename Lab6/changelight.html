@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change the Light</title>
+</head>
+<body>
+  <h2>What Can JavaScript Do?</h2>
+  <p>JavaScript can change HTML attribute values.</p>
+  <p>Here, JavaScript changes the src attribute of the image.</p>
+
+  <button type="button" onclick="setLight(true)">Turn on the light</button>
+  <img id="myImage" src="pic_bulboff.gif" width="100" height="180" alt="Light bulb is off">
+  <button type="button" onclick="setLight(false)">Turn off the light</button>
+
+  <script>
+    function setLight(isOn) {
+      const image = document.getElementById("myImage");
+      image.src = isOn ? "pic_bulbon.gif" : "pic_bulboff.gif";
+      image.alt = isOn ? "Light bulb is on" : "Light bulb is off";
+    }
+  </script>
+</body>
+</html>

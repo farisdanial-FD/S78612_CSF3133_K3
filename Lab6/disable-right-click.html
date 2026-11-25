@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Disable Right-Click</title>
+  <script>
+    document.addEventListener("contextmenu", function (event) {
+      event.preventDefault();
+      alert("Right-click is disabled on this page.");
+    });
+  </script>
+</head>
+<body>
+  <h2>Right-Click Disabled</h2>
+  <p>Try right-clicking anywhere on this page.</p>
+</body>
+</html>
