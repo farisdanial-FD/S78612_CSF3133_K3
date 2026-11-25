@@ -48,7 +48,7 @@ Repositori ini mengumpulkan tugasan dan latihan makmal HTML, CSS dan JavaScript.
 
 Lab 4 mempunyai stylesheet `style.css`, `style_ExerA.css` dan `cafe.css`. Lab 5 pula mempunyai `style.css`, `food.css`, `shop.css`, `umt.css` serta aset imej `books.jpg` dan `header-bg.jpg`. Screenshot validation Lab 5 (`validation_food_html.png`, `validation_food_css.png`, `validation_shop_html.png`, `validation_shop_css.png`) boleh dibuka melalui galeri portal.
 
-Lab 6 mengandungi stylesheet `game.css`, `grade.css` dan `style.css`; JavaScript `form-validation.js`, `game.js`, `grade.js`, `guess-number.js`, `message.js`, `multiplication-table.js`, `numeric-validation.js` dan `script.js`; serta panduan `kod-lab6.md`. Aset tambahan termasuk ikon permainan Rock/Paper/Scissors dan GIF mentol. Galeri portal menunjukkan 8 screenshot contoh output untuk permainan dan kalkulator gred—ini bukan screenshot validation.
+Lab 6 mengandungi stylesheet `game.css`, `grade.css` dan `style.css`; JavaScript `form-validation.js`, `game.js`, `grade.js`, `guess-number.js`, `message.js`, `multiplication-table.js`, `numeric-validation.js` dan `script.js`; serta panduan `kod-lab6.md`. Aset visualnya ialah `paper.png`, `rock.png` dan `scissors.png` untuk permainan, serta `pic_bulboff.gif` dan `pic_bulbon.gif` untuk latihan mentol. Galeri portal menunjukkan 8 screenshot contoh output untuk permainan dan kalkulator gred—ini bukan screenshot validation.
 
 Folder Lab 3 belum mempunyai screenshot validation untuk `inattribute5.html`.
 
