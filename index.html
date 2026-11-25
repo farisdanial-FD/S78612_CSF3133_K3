@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#142a32">
-    <meta name="description" content="Portal portfolio makmal CSF3133 K3: buka hasil kerja HTML dan lihat tangkapan skrin validation mengikut lab.">
+    <meta name="description" content="Portal portfolio makmal CSF3133 K3: buka hasil kerja HTML, CSS dan JavaScript serta lihat screenshot validation dan contoh output mengikut makmal.">
     <title>Portfolio Makmal | S78612 CSF3133 K3</title>
     <style>
         :root {
@@ -487,13 +487,32 @@
 
         .lab-three .work-list,
         .lab-four .work-list,
-        .lab-five .work-list {
+        .lab-five .work-list,
+        .lab-six .work-list {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
         .lab-four .lab-content,
-        .lab-five .lab-content {
+        .lab-five .lab-content,
+        .lab-six .lab-content {
             grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        }
+
+        .source-details {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--line);
+        }
+
+        .source-details summary {
+            color: #596c6b;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 750;
+        }
+
+        .source-details[open] summary {
+            margin-bottom: 10px;
         }
 
         .lab-topics {
@@ -751,6 +770,22 @@
         }
 
         @media (max-width: 820px) {
+            .topbar {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 14px;
+                padding: 16px 0 20px;
+            }
+
+            .top-nav {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .top-nav .nav-github {
+                margin-left: auto;
+            }
+
             .hero {
                 grid-template-columns: minmax(0, 1fr);
                 gap: 28px;
@@ -766,7 +801,8 @@
 
             .lab-three .lab-content,
             .lab-four .lab-content,
-            .lab-five .lab-content {
+            .lab-five .lab-content,
+            .lab-six .lab-content {
                 grid-template-columns: minmax(0, 1fr);
             }
 
@@ -876,7 +912,8 @@
 
             .lab-three .work-list,
             .lab-four .work-list,
-            .lab-five .work-list {
+            .lab-five .work-list,
+            .lab-six .work-list {
                 grid-template-columns: minmax(0, 1fr);
             }
 
@@ -928,6 +965,7 @@
                 <a href="#lab-3">Lab 3</a>
                 <a href="#lab-4">Lab 4</a>
                 <a href="#lab-5">Lab 5</a>
+                <a href="#lab-6">Lab 6</a>
                 <a class="nav-github" href="https://github.com/farisdanial-FD/S78612_CSF3133_K3" target="_blank" rel="noopener noreferrer">Repositori <span aria-hidden="true">↗</span></a>
             </nav>
         </header>
@@ -937,7 +975,7 @@
                 <div class="hero-copy">
                     <p class="eyebrow hero-eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Portfolio pembangunan web</p>
                     <h1 id="hero-title">Makmal web,<br><span>tersusun rapi.</span></h1>
-                    <p class="hero-description">Semak tugasan HTML Lab 1 hingga Lab 5, buka setiap halaman terus, dan lihat bukti validation yang tersedia.</p>
+                    <p class="hero-description">Semak tugasan HTML, CSS dan JavaScript Lab 1 hingga Lab 6, buka setiap halaman terus, dan lihat screenshot bukti yang tersedia.</p>
                     <div class="hero-actions">
                         <a class="button button-primary" href="#lab-1">Teroka portfolio <span aria-hidden="true">↓</span></a>
                         <a class="button button-secondary" href="https://github.com/farisdanial-FD/S78612_CSF3133_K3" target="_blank" rel="noopener noreferrer">Lihat repositori <span aria-hidden="true">↗</span></a>
@@ -947,12 +985,12 @@
                 <aside class="hero-summary" aria-label="Ringkasan portfolio">
                     <div class="summary-heading"><span>RINGKASAN PORTFOLIO</span><span>CSF3133 · K3</span></div>
                     <div class="summary-stats">
-                        <div class="summary-stat"><strong>05</strong><span>Makmal</span></div>
-                        <div class="summary-stat"><strong>42</strong><span>Halaman HTML</span></div>
-                        <div class="summary-stat"><strong>24</strong><span>Screenshot</span></div>
+                        <div class="summary-stat"><strong>06</strong><span>Makmal</span></div>
+                        <div class="summary-stat"><strong>56</strong><span>Halaman tugasan</span></div>
+                        <div class="summary-stat"><strong>32</strong><span>Screenshot</span></div>
                     </div>
                     <div class="summary-rule"></div>
-                    <p class="summary-note"><span class="summary-check" aria-hidden="true">✓</span><span>Screenshot validation yang tersedia dipaparkan bersama lab berkaitan.</span></p>
+                    <p class="summary-note"><span class="summary-check" aria-hidden="true">✓</span><span>Screenshot validation dan contoh output dipaparkan bersama lab berkaitan.</span></p>
                 </aside>
             </section>
 
@@ -962,7 +1000,7 @@
                         <p class="eyebrow">Pilih makmal</p>
                         <h2 id="portfolio-title">Hasil kerja &amp; bukti semakan</h2>
                     </div>
-                    <p>Klik nama tugasan untuk buka laman. Klik gambar validation untuk lihat screenshot penuh.</p>
+                    <p>Klik nama tugasan untuk buka laman. Klik gambar bukti untuk lihat screenshot penuh.</p>
                 </div>
 
                 <article class="lab-card" id="lab-1" aria-labelledby="lab-1-title">
@@ -1471,6 +1509,207 @@
                                 </a>
                             </div>
                             <p class="proof-note"><span aria-hidden="true">i</span> Bukti validation tersedia untuk HTML dan CSS bagi kedua-dua halaman.</p>
+                        </section>
+                    </div>
+                </article>
+
+                <article class="lab-card lab-six" id="lab-6" aria-labelledby="lab-6-title">
+                    <header class="lab-heading">
+                        <span class="lab-index" aria-hidden="true">06</span>
+                        <div class="lab-title-copy">
+                            <p class="eyebrow">JAVASCRIPT &amp; INTERAKTIVITI</p>
+                            <h3 id="lab-6-title">Lab 6</h3>
+                            <p>Latihan DOM, borang, permainan interaktif dan kalkulator gred.</p>
+                        </div>
+                        <span class="lab-count">14 halaman</span>
+                    </header>
+                    <div class="lab-content">
+                        <section class="content-panel" aria-labelledby="lab-6-title lab-6-work-title">
+                            <div class="panel-heading">
+                                <h4 id="lab-6-work-title">Hasil kerja</h4>
+                                <span class="panel-kicker">14 HTML · 3 CSS · 8 JS</span>
+                            </div>
+                            <div class="work-list">
+                                <a class="work-link" href="Lab6/changelight.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">01</span>
+                                    <span class="work-copy"><strong>Change the Light</strong><span>changelight.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab6/datetimejs.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">02</span>
+                                    <span class="work-copy"><strong>Date and Time</strong><span>datetimejs.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab6/disable-right-click.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">03</span>
+                                    <span class="work-copy"><strong>Browser Events</strong><span>disable-right-click.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab6/extjavascript.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">04</span>
+                                    <span class="work-copy"><strong>External JavaScript</strong><span>extjavascript.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab6/firstjs.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">05</span>
+                                    <span class="work-copy"><strong>First JavaScript</strong><span>firstjs.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab6/firstjs-formatted.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">06</span>
+                                    <span class="work-copy"><strong>Formatted JavaScript</strong><span>firstjs-formatted.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab6/firstjs-6.4.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">07</span>
+                                    <span class="work-copy"><strong>DOM Content Change</strong><span>firstjs-6.4.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab6/form-validation.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">08</span>
+                                    <span class="work-copy"><strong>Form Validation</strong><span>form-validation.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab6/grade.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">09</span>
+                                    <span class="work-copy"><strong>Student Grade Calculator</strong><span>grade.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab6/guess-number.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">10</span>
+                                    <span class="work-copy"><strong>Guess the Number</strong><span>guess-number.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab6/index.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">11</span>
+                                    <span class="work-copy"><strong>Web Basics Quiz</strong><span>index.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab6/lab6_ExerA.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">12</span>
+                                    <span class="work-copy"><strong>Rock, Paper, Scissors</strong><span>lab6_ExerA.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab6/multiplication-table.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">13</span>
+                                    <span class="work-copy"><strong>Multiplication Table</strong><span>multiplication-table.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                                <a class="work-link" href="Lab6/numeric-validation.html" target="_blank" rel="noopener noreferrer">
+                                    <span class="file-number" aria-hidden="true">14</span>
+                                    <span class="work-copy"><strong>Numeric Validation</strong><span>numeric-validation.html</span></span>
+                                    <span class="work-arrow" aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                            <details class="source-details">
+                                <summary>Fail sokongan CSS, JavaScript dan panduan</summary>
+                                <div class="work-list">
+                                    <a class="work-link" href="Lab6/game.css" target="_blank" rel="noopener noreferrer">
+                                        <span class="file-number" aria-hidden="true">CSS</span>
+                                        <span class="work-copy"><strong>Game Stylesheet</strong><span>game.css</span></span>
+                                        <span class="work-arrow" aria-hidden="true">↗</span>
+                                    </a>
+                                    <a class="work-link" href="Lab6/grade.css" target="_blank" rel="noopener noreferrer">
+                                        <span class="file-number" aria-hidden="true">CSS</span>
+                                        <span class="work-copy"><strong>Grade Calculator Stylesheet</strong><span>grade.css</span></span>
+                                        <span class="work-arrow" aria-hidden="true">↗</span>
+                                    </a>
+                                    <a class="work-link" href="Lab6/style.css" target="_blank" rel="noopener noreferrer">
+                                        <span class="file-number" aria-hidden="true">CSS</span>
+                                        <span class="work-copy"><strong>Quiz Stylesheet</strong><span>style.css</span></span>
+                                        <span class="work-arrow" aria-hidden="true">↗</span>
+                                    </a>
+                                    <a class="work-link" href="Lab6/form-validation.js" target="_blank" rel="noopener noreferrer">
+                                        <span class="file-number" aria-hidden="true">JS</span>
+                                        <span class="work-copy"><strong>Form Validation Script</strong><span>form-validation.js</span></span>
+                                        <span class="work-arrow" aria-hidden="true">↗</span>
+                                    </a>
+                                    <a class="work-link" href="Lab6/game.js" target="_blank" rel="noopener noreferrer">
+                                        <span class="file-number" aria-hidden="true">JS</span>
+                                        <span class="work-copy"><strong>Game Script</strong><span>game.js</span></span>
+                                        <span class="work-arrow" aria-hidden="true">↗</span>
+                                    </a>
+                                    <a class="work-link" href="Lab6/grade.js" target="_blank" rel="noopener noreferrer">
+                                        <span class="file-number" aria-hidden="true">JS</span>
+                                        <span class="work-copy"><strong>Grade Calculator Script</strong><span>grade.js</span></span>
+                                        <span class="work-arrow" aria-hidden="true">↗</span>
+                                    </a>
+                                    <a class="work-link" href="Lab6/guess-number.js" target="_blank" rel="noopener noreferrer">
+                                        <span class="file-number" aria-hidden="true">JS</span>
+                                        <span class="work-copy"><strong>Guess Number Script</strong><span>guess-number.js</span></span>
+                                        <span class="work-arrow" aria-hidden="true">↗</span>
+                                    </a>
+                                    <a class="work-link" href="Lab6/message.js" target="_blank" rel="noopener noreferrer">
+                                        <span class="file-number" aria-hidden="true">JS</span>
+                                        <span class="work-copy"><strong>Message Script</strong><span>message.js</span></span>
+                                        <span class="work-arrow" aria-hidden="true">↗</span>
+                                    </a>
+                                    <a class="work-link" href="Lab6/multiplication-table.js" target="_blank" rel="noopener noreferrer">
+                                        <span class="file-number" aria-hidden="true">JS</span>
+                                        <span class="work-copy"><strong>Multiplication Table Script</strong><span>multiplication-table.js</span></span>
+                                        <span class="work-arrow" aria-hidden="true">↗</span>
+                                    </a>
+                                    <a class="work-link" href="Lab6/numeric-validation.js" target="_blank" rel="noopener noreferrer">
+                                        <span class="file-number" aria-hidden="true">JS</span>
+                                        <span class="work-copy"><strong>Numeric Validation Script</strong><span>numeric-validation.js</span></span>
+                                        <span class="work-arrow" aria-hidden="true">↗</span>
+                                    </a>
+                                    <a class="work-link" href="Lab6/script.js" target="_blank" rel="noopener noreferrer">
+                                        <span class="file-number" aria-hidden="true">JS</span>
+                                        <span class="work-copy"><strong>Quiz Script</strong><span>script.js</span></span>
+                                        <span class="work-arrow" aria-hidden="true">↗</span>
+                                    </a>
+                                    <a class="work-link" href="Lab6/kod-lab6.md" target="_blank" rel="noopener noreferrer">
+                                        <span class="file-number" aria-hidden="true">MD</span>
+                                        <span class="work-copy"><strong>Lab 6 Code Guide</strong><span>kod-lab6.md</span></span>
+                                        <span class="work-arrow" aria-hidden="true">↗</span>
+                                    </a>
+                                </div>
+                            </details>
+                            <a class="repo-link" href="https://github.com/farisdanial-FD/S78612_CSF3133_K3/tree/main/Lab6" target="_blank" rel="noopener noreferrer">📂 Lihat semua fail Lab 6 di GitHub <span aria-hidden="true">↗</span></a>
+                        </section>
+
+                        <section class="content-panel" aria-labelledby="lab-6-title lab-6-output-title">
+                            <div class="panel-heading">
+                                <h4 id="lab-6-output-title">Screenshot contoh output</h4>
+                                <span class="panel-kicker">08 BUKTI</span>
+                            </div>
+                            <p class="proof-intro">Contoh output permainan dan kalkulator gred — klik gambar untuk saiz penuh.</p>
+                            <div class="proof-grid">
+                                <a class="proof-card" href="Lab6/lab6_ExerA_output.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot output Rock Paper Scissors Lab 6 dalam tab baharu">
+                                    <span class="proof-image"><img src="Lab6/lab6_ExerA_output.png" alt="Screenshot contoh output permainan Rock Paper Scissors" loading="lazy" decoding="async"></span>
+                                    <span class="proof-caption"><span>Rock · Paper · Scissors</span><span aria-hidden="true">↗</span></span>
+                                </a>
+                                <a class="proof-card" href="Lab6/Lab6_ExerB_AgradeOutput.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot output gred A Lab 6 dalam tab baharu">
+                                    <span class="proof-image"><img src="Lab6/Lab6_ExerB_AgradeOutput.png" alt="Screenshot output Student Grade Calculator untuk gred A" loading="lazy" decoding="async"></span>
+                                    <span class="proof-caption"><span>Grade A</span><span aria-hidden="true">↗</span></span>
+                                </a>
+                                <a class="proof-card" href="Lab6/Lab6_ExerB_CgradeOutput.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot output gred C Lab 6 dalam tab baharu">
+                                    <span class="proof-image"><img src="Lab6/Lab6_ExerB_CgradeOutput.png" alt="Screenshot output Student Grade Calculator untuk gred C" loading="lazy" decoding="async"></span>
+                                    <span class="proof-caption"><span>Grade C</span><span aria-hidden="true">↗</span></span>
+                                </a>
+                                <a class="proof-card" href="Lab6/Lab6_ExerB_FgradeOutput.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot output gred F Lab 6 dalam tab baharu">
+                                    <span class="proof-image"><img src="Lab6/Lab6_ExerB_FgradeOutput.png" alt="Screenshot output Student Grade Calculator untuk gred F" loading="lazy" decoding="async"></span>
+                                    <span class="proof-caption"><span>Grade F</span><span aria-hidden="true">↗</span></span>
+                                </a>
+                                <a class="proof-card" href="Lab6/Lab6_ExerB_GradeScale.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot skala gred Lab 6 dalam tab baharu">
+                                    <span class="proof-image"><img src="Lab6/Lab6_ExerB_GradeScale.png" alt="Screenshot skala gred Student Grade Calculator" loading="lazy" decoding="async"></span>
+                                    <span class="proof-caption"><span>Grade Scale</span><span aria-hidden="true">↗</span></span>
+                                </a>
+                                <a class="proof-card" href="Lab6/Lab6_ExerB_MarkError.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot ralat markah Lab 6 dalam tab baharu">
+                                    <span class="proof-image"><img src="Lab6/Lab6_ExerB_MarkError.png" alt="Screenshot contoh ralat markah dalam Student Grade Calculator" loading="lazy" decoding="async"></span>
+                                    <span class="proof-caption"><span>Mark Error</span><span aria-hidden="true">↗</span></span>
+                                </a>
+                                <a class="proof-card" href="Lab6/Lab6_ExerB_NameError.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot ralat nama Lab 6 dalam tab baharu">
+                                    <span class="proof-image"><img src="Lab6/Lab6_ExerB_NameError.png" alt="Screenshot contoh ralat nama dalam Student Grade Calculator" loading="lazy" decoding="async"></span>
+                                    <span class="proof-caption"><span>Name Error</span><span aria-hidden="true">↗</span></span>
+                                </a>
+                                <a class="proof-card" href="Lab6/Lab6_ExerB_NumericError.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot ralat input nombor Lab 6 dalam tab baharu">
+                                    <span class="proof-image"><img src="Lab6/Lab6_ExerB_NumericError.png" alt="Screenshot contoh ralat input nombor dalam Student Grade Calculator" loading="lazy" decoding="async"></span>
+                                    <span class="proof-caption"><span>Numeric Error</span><span aria-hidden="true">↗</span></span>
+                                </a>
+                            </div>
+                            <p class="proof-note"><span aria-hidden="true">i</span> Ini ialah screenshot contoh output Lab 6, bukan screenshot validation.</p>
                         </section>
                     </div>
                 </article>
